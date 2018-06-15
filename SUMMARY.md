@@ -12,4 +12,5 @@
     * [运行](chapter2/run.md)
 * [功能组件](chapter3/README.md)
 * [Admin](chapter4/README.md)
+    * [接口文档](chapter4/api-doc.md)
 
