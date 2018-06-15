@@ -11,5 +11,5 @@
     * [引入](chapter2/import.md)
     * [运行](chapter2/run.md)
 * [功能组件](chapter3/README.md)
-* [后台管理](chapter3/README.md)
+* [Admin](chapter3/README.md)
 
