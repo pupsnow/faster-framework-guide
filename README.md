@@ -14,6 +14,4 @@ Faster-Framework是一款基于Spring Boot，并整合多个三方开源组件�
 - 功能组件。本章将带您了解Faster中所集成的组件，并对其详解。
 - Admin。Faster-Framework-Admin是基于Faster-Framework-Core所扩展的基础后台管理框架。您可以引入框架用于快速开发后台管理系统。
 
-```
-Faster-Framework全部为开源，包含其入门文档。您可以转载文档但不可用于商业用途。
-```
+> Faster-Framework全部为开源，包含其入门文档。您可以转载文档但不可用于商业用途。
