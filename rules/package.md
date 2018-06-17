@@ -22,3 +22,5 @@ inteceptor|Spring 拦截器
 api|外部接口类。
 
     您也可以根据您自己的理解进行包的建立。
+
+5. 对于分版本接口，我们建议您在modules下建立v1、v2等能表明版本的包名。如：com.github.faster.test.modules.v1.user;
