@@ -6,8 +6,8 @@
     ],
     "pluginsConfig": {
         "donate": {
-            "wechat": "/static/wechat.png",
-            "alipay": "/static/alipay.png",
+            "wechat": "https://faster-framework.github.io/faster-framework-guide/static/wechat.png",
+            "alipay": "https://faster-framework.github.io/faster-framework-guide/static/alipay.png",
             "button": "赏",
             "alipayText": "支付宝打赏",
             "wechatText": "微信打赏"
