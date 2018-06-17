@@ -419,7 +419,89 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x7248;&#x672C;&#x63A7;&#x5236;">&#x7248;&#x672C;&#x63A7;&#x5236;</h1>
+<p>&#x672C;&#x8282;&#x4ECB;&#x7ECD;&#x63A5;&#x53E3;&#x7684;&#x7248;&#x672C;&#x63A7;&#x5236;&#xFF0C;&#x4EE5;&#x8FBE;&#x5230;&#x7248;&#x672C;&#x7EE7;&#x627F;&#xFF0C;&#x7248;&#x672C;&#x9694;&#x79BB;&#x7684;&#x4F5C;&#x7528;&#x3002;</p>
+<h2 id="apiversion">@ApiVersion</h2>
+<p>&#x6211;&#x4EEC;&#x4F7F;&#x7528;@ApiVersion&#x6CE8;&#x89E3;&#x63A7;&#x5236;&#x7248;&#x672C;&#x6743;&#x9650;&#xFF0C;&#x5728;Controller&#x7C7B;&#x4E0A;&#x589E;&#x52A0;&#x6CE8;&#x89E3;&#xFF0C;&#x503C;&#x4E3A;&#x7248;&#x672C;&#x53F7;&#x5373;&#x53EF;&#x5B9E;&#x73B0;&#x7248;&#x672C;&#x9694;&#x79BB;&#xFF0C;&#x7EE7;&#x627F;&#x3002;</p>
+<p>@ApiVersion&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;1</p>
+<h2 id="&#x5EFA;&#x7ACB;&#x5305;">&#x5EFA;&#x7ACB;&#x5305;</h2>
+<pre><code>cn.faster.test.modules.v1.user;
+cn.faster.test.modules.v2.user;
+</code></pre><h2 id="&#x5EFA;&#x7ACB;&#x7C7B;">&#x5EFA;&#x7ACB;&#x7C7B;</h2>
+<h3 id="v1&#x7248;&#x672C;&#x7684;controller">V1&#x7248;&#x672C;&#x7684;Controller</h3>
+<p>cn.faster.test.modules.v1.user.controller.UserController;</p>
+<pre><code>package cn.faster.test.modules.v1.user;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @author zhangbowen
+ */
+@RequestMapping(&quot;/{version}/user&quot;)
+@RestController
+public class UserController {
+    @GetMapping(&quot;/extend&quot;)
+    public ResponseEntity extend() {
+        return ResponseEntity.ok(&quot;&#x6D4B;&#x8BD5;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x7684;&#x63A5;&#x53E3;&quot;);
+    }
+
+    @GetMapping(&quot;/hello&quot;)
+    public ResponseEntity hello() {
+        return ResponseEntity.ok(&quot;&#x8FD9;&#x662F;&#x7248;&#x672C;1&#x7684;hello&#x63A5;&#x53E3;&quot;);
+    }
+}
+</code></pre><h3 id="v2&#x7248;&#x672C;&#x7684;controller">V2&#x7248;&#x672C;&#x7684;Controller</h3>
+<p>cn.faster.test.modules.v2.user.controller.UserController;</p>
+<pre><code>package cn.faster.test.modules.v2.user;
+
+import com.github.faster.framework.core.web.version.ApiVersion;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @author zhangbowen
+ */
+@RequestMapping(&quot;/{version}/user&quot;)
+@RestController
+@ApiVersion(2)
+public class UserController {
+    @GetMapping(&quot;/hello&quot;)
+    public ResponseEntity hello() {
+        return ResponseEntity.ok(&quot;&#x6D4B;&#x8BD5;&#x7248;&#x672C;2&#x7684;hello&#x63A5;&#x53E3;&quot;);
+    }
+
+    @GetMapping(&quot;/new&quot;)
+    public ResponseEntity newApi() {
+        return ResponseEntity.ok(&quot;&#x6D4B;&#x8BD5;&#x7248;&#x672C;2&#x7684;&#x65B0;&#x63A5;&#x53E3;&quot;);
+    }
+}
+</code></pre><h2 id="&#x9A8C;&#x8BC1;">&#x9A8C;&#x8BC1;</h2>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x7248;&#x672C;1&#x62E5;&#x6709;&#x63A5;&#x53E3;&#xFF1A;
+extend&#x3001;hello
+&#x7248;&#x672C;2&#x62E5;&#x6709;&#x63A5;&#x53E3;&#xFF1A;
+extend&#x3001;hello&#x3001;new</p>
+<h3 id="&#x6D4B;&#x8BD5;&#x7248;&#x672C;1&#x63A5;&#x53E3;">&#x6D4B;&#x8BD5;&#x7248;&#x672C;1&#x63A5;&#x53E3;</h3>
+<pre><code>http://localhost:8080/v1/extend
+
+&#x8F93;&#x51FA;&#xFF1A;&#x6D4B;&#x8BD5;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x7684;&#x63A5;&#x53E3;
+</code></pre><pre><code>http://localhost:8080/v1/hello
+
+&#x8F93;&#x51FA;&#xFF1A;&#x8FD9;&#x662F;&#x7248;&#x672C;1&#x7684;hello&#x63A5;&#x53E3;
+</code></pre><h3 id="&#x6D4B;&#x8BD5;&#x7248;&#x672C;2&#x63A5;&#x53E3;">&#x6D4B;&#x8BD5;&#x7248;&#x672C;2&#x63A5;&#x53E3;</h3>
+<pre><code>http://localhost:8080/v2/extend
+
+&#x8F93;&#x51FA;&#xFF1A;&#x6D4B;&#x8BD5;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x7684;&#x63A5;&#x53E3;
+</code></pre><pre><code>http://localhost:8080/v2/hello
+
+&#x8F93;&#x51FA;&#xFF1A;&#x6D4B;&#x8BD5;&#x7248;&#x672C;2&#x7684;hello&#x63A5;&#x53E3;
+</code></pre><pre><code>http://localhost:8080/v2/new
+
+&#x8F93;&#x51FA;&#xFF1A;&#x6D4B;&#x8BD5;&#x7248;&#x672C;2&#x7684;&#x65B0;&#x63A5;&#x53E3;
+</code></pre>
                                 
                                 </section>
                             
@@ -462,7 +544,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"版本控制","level":"1.3.5","depth":2,"next":{"title":"开发规范","level":"1.4","depth":1,"path":"rules/README.md","ref":"rules/README.md","articles":[{"title":"分包","level":"1.4.1","depth":2,"path":"rules/package.md","ref":"rules/package.md","articles":[]},{"title":"数据库操作","level":"1.4.2","depth":2,"path":"rules/dbop.md","ref":"rules/dbop.md","articles":[]},{"title":"验证","level":"1.4.3","depth":2,"path":"rules/valid.md","ref":"rules/valid.md","articles":[]}]},"previous":{"title":"简单示例","level":"1.3.4","depth":2,"path":"started/sample.md","ref":"started/sample.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"started/version.md","mtime":"2018-06-17T07:46:52.107Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-17T07:56:16.981Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"版本控制","level":"1.3.5","depth":2,"next":{"title":"开发规范","level":"1.4","depth":1,"path":"rules/README.md","ref":"rules/README.md","articles":[{"title":"分包","level":"1.4.1","depth":2,"path":"rules/package.md","ref":"rules/package.md","articles":[]},{"title":"数据库操作","level":"1.4.2","depth":2,"path":"rules/dbop.md","ref":"rules/dbop.md","articles":[]},{"title":"验证","level":"1.4.3","depth":2,"path":"rules/valid.md","ref":"rules/valid.md","articles":[]}]},"previous":{"title":"简单示例","level":"1.3.4","depth":2,"path":"started/sample.md","ref":"started/sample.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"started/version.md","mtime":"2018-06-17T09:56:37.696Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-17T09:58:52.270Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
