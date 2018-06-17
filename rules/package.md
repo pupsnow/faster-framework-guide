@@ -1,4 +1,4 @@
-# 分包
+# 分包规范
 良好的分包规范使我们得到一个清晰的代码结构。有利于代码的可扩展性。
 
 我们建议大家采用以下分包规范：
@@ -24,3 +24,4 @@ api|外部接口类。
     您也可以根据您自己的理解进行包的建立。
 
 5. 对于分版本接口，我们建议您在modules下建立v1、v2等能表明版本的包名。如：com.github.faster.test.modules.v1.user;
+6. 每个包下所建立的类的命名应增加包名后缀，如UserController、UserService、UserEntity、UserTask等。
