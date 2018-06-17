@@ -440,36 +440,33 @@
                                 <section class="normal markdown-section">
                                 
                                 <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x5F02;&#x5E38;&#x89C4;&#x8303;"><b></b>&#x5F02;&#x5E38;&#x89C4;&#x8303;</a></li></ul></div><a href="#&#x5F02;&#x5E38;&#x89C4;&#x8303;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5F02;&#x5E38;&#x89C4;&#x8303;"><a name="&#x5F02;&#x5E38;&#x89C4;&#x8303;" class="anchor-navigation-ex-anchor" href="#&#x5F02;&#x5E38;&#x89C4;&#x8303;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5F02;&#x5E38;&#x89C4;&#x8303;</h1>
-<ol>
+<ul>
 <li>&#x5BF9;&#x4E8E;&#x63A5;&#x53E3;&#x8FD4;&#x56DE;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x65B0;&#x5EFA;error&#x5305;&#xFF0C;&#x7528;&#x4E8E;&#x5B58;&#x50A8;errorCode</li>
 <li>errorCode&#x5E94;&#x4ECE;2000&#x5F00;&#x59CB;&#xFF08;1000&#x5230;2000&#x4E3A;&#x6846;&#x67B6;&#x9519;&#x8BEF;&#x7801;&#xFF09;</li>
 <li>&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x624B;&#x52A8;&#x6355;&#x83B7;&#x5F02;&#x5E38;&#xFF0C;&#x4EE5;&#x6709;&#x5168;&#x5C40;&#x5F02;&#x5E38;&#x6355;&#x83B7;&#x673A;&#x5236;&#x3002;</li>
 <li>&#x63A5;&#x53E3;&#x5F02;&#x5E38;&#x6211;&#x4EEC;&#x4F7F;&#x7528;ErrorResponseEntity.error()&#x8FD4;&#x56DE;&#xFF0C;&#x5FC5;&#x987B;HttpStatus&#x5FC5;&#x987B;&#x5927;&#x4E8E;400&#x3002;</li>
-<li>&#x6211;&#x4EEC;&#x5C3D;&#x91CF;&#x9760;&#x524D;&#x8FD4;&#x56DE;&#x5F02;&#x5E38;&#xFF0C;&#x9760;&#x540E;&#x5904;&#x7406;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</li>
-</ol>
-<pre><code>public ResponseEntity test(Long userId){
-    if(userId&lt;10L&gt;){
-        return ErrorResponseEntity.error();
-    }
-    if(userMapper.existUser(userId)){
-        return ErrorResponseEntity.error();
-    }
-    //todo more opreation
-}
-</code></pre><ol>
-<li>&#x5F02;&#x5E38;&#x5FC5;&#x987B;&#x5B9E;&#x73B0;ErrorCode&#x63A5;&#x53E3;&#xFF0C;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</li>
-</ol>
-<pre><code>@AllArgsConstructor
-@Getter
-public enum  RoleError implements ErrorCode {
-    ADMIN_CANNOT_DELETE(1120,&quot;&#x8D85;&#x7EA7;&#x7BA1;&#x7406;&#x5458;&#x89D2;&#x8272;&#x4E0D;&#x53EF;&#x5220;&#x9664;&quot;)
-    ;
+<li><p>&#x6211;&#x4EEC;&#x5C3D;&#x91CF;&#x9760;&#x524D;&#x8FD4;&#x56DE;&#x5F02;&#x5E38;&#xFF0C;&#x9760;&#x540E;&#x5904;&#x7406;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>  public ResponseEntity test(Long userId){
+      if(userId&lt;10L&gt;){
+          return ErrorResponseEntity.error();
+      }
+      if(userMapper.existUser(userId)){
+          return ErrorResponseEntity.error();
+      }
+      //todo more opreation
+  }
+</code></pre></li>
+<li><p>&#x5F02;&#x5E38;&#x5FC5;&#x987B;&#x5B9E;&#x73B0;ErrorCode&#x63A5;&#x53E3;&#xFF0C;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>  @AllArgsConstructor
+  @Getter
+  public enum  RoleError implements ErrorCode {
+      ADMIN_CANNOT_DELETE(1120,&quot;&#x8D85;&#x7EA7;&#x7BA1;&#x7406;&#x5458;&#x89D2;&#x8272;&#x4E0D;&#x53EF;&#x5220;&#x9664;&quot;);
+      private int value;
+      private String description;
+  }
+</code></pre></li>
+</ul>
 
-
-    private int value;
-    private String description;
-}
-</code></pre>
                                 
                                 </section>
                             
@@ -512,7 +509,7 @@ public enum  RoleError implements ErrorCode {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"异常规范","level":"1.4.4","depth":2,"next":{"title":"功能组件","level":"1.5","depth":1,"path":"component/README.md","ref":"component/README.md","articles":[]},"previous":{"title":"验证规范","level":"1.4.3","depth":2,"path":"rules/valid.md","ref":"rules/valid.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex","donate","copy-code-button"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://faster-framework.github.io/faster-framework-guide/static/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://faster-framework.github.io/faster-framework-guide/static/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"rules/error.md","mtime":"2018-06-17T17:03:08.331Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-17T17:03:50.252Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"异常规范","level":"1.4.4","depth":2,"next":{"title":"功能组件","level":"1.5","depth":1,"path":"component/README.md","ref":"component/README.md","articles":[]},"previous":{"title":"验证规范","level":"1.4.3","depth":2,"path":"rules/valid.md","ref":"rules/valid.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex","donate","copy-code-button"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://faster-framework.github.io/faster-framework-guide/static/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://faster-framework.github.io/faster-framework-guide/static/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"rules/error.md","mtime":"2018-06-17T17:25:38.547Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-17T17:26:01.158Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
