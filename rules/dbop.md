@@ -28,3 +28,4 @@
 
 - 数据库实体建立时，时间字段请使用LocalDateTime。
 - 我们的BaseEntity默认提供一系列数据库字段（deleted,createDate等）。我们建议您的数据使用逻辑删除以防止意外。
+- 我们希望您在对数据库进行操作时，均使用继承BaseEntity的实体。
