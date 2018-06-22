@@ -127,12 +127,12 @@ Faster提供了两种分页方法，分别是selectPage和selectPageByExample。
 
     正确写法：
 
-    ```
+    
     select username,ifNull(username,'defaultName') as nameDefault,password from tb_user
-    ```
+    
 
     错误写法:
 
-    ```
+    
     select username,password,ifNull(username,'defaultName') as nameDefault from tb_user
-    ```
+    
