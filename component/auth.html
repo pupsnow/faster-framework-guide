@@ -68,7 +68,7 @@
     <link rel="next" href="upload.html" />
     
     
-    <link rel="prev" href="exception.html" />
+    <link rel="prev" href="errorCode.html" />
     
 
     </head>
@@ -428,7 +428,20 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.6" data-path="auth.html">
+        <li class="chapter " data-level="1.5.6" data-path="errorCode.html">
+            
+                <a href="errorCode.html">
+            
+                    
+                    ErrorCode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.7" data-path="auth.html">
             
                 <a href="auth.html">
             
@@ -441,7 +454,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.7" data-path="upload.html">
+        <li class="chapter " data-level="1.5.8" data-path="upload.html">
             
                 <a href="upload.html">
             
@@ -454,7 +467,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.8" data-path="utils.html">
+        <li class="chapter " data-level="1.5.9" data-path="utils.html">
             
                 <a href="utils.html">
             
@@ -549,7 +562,40 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#auth"><b></b>Auth</a></li></ul></div><a href="#auth" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="auth"><a name="auth" class="anchor-navigation-ex-anchor" href="#auth"><i class="fa fa-link" aria-hidden="true"></i></a>Auth</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#auth"><b></b>Auth</a></li><ul><li><span class="title-icon "></span><a href="#appauthinterceptor"><b></b>AppAuthInterceptor</a></li><li><span class="title-icon "></span><a href="#login"><b></b>@Login</a></li><li><span class="title-icon "></span><a href="#appauthcontextfacade"><b></b>AppAuthContextFacade</a></li><li><span class="title-icon "></span><a href="#jwtservice"><b></b>JwtService</a></li></ul></ul></div><a href="#auth" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="auth"><a name="auth" class="anchor-navigation-ex-anchor" href="#auth"><i class="fa fa-link" aria-hidden="true"></i></a>Auth</h1>
+<p>&#x5B89;&#x5168;&#x662F;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x4E0D;&#x53EF;&#x6216;&#x7F3A;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;</p>
+<p>Faster&#x63D0;&#x4F9B;&#x4E86;&#x9ED8;&#x8BA4;&#x7684;app&#x63A5;&#x53E3;&#x6743;&#x9650;&#x7EC4;&#x4EF6;&#xFF0C;&#x901A;&#x8FC7;jwt&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6269;&#x5C55;&#x81EA;&#x5DF1;&#x7684;&#x6743;&#x9650;&#x62E6;&#x622A;&#x5668;&#x3002;</p>
+<h2 id="appauthinterceptor"><a name="appauthinterceptor" class="anchor-navigation-ex-anchor" href="#appauthinterceptor"><i class="fa fa-link" aria-hidden="true"></i></a>AppAuthInterceptor</h2>
+<p>&#x9ED8;&#x8BA4;&#x7684;&#xFF0C;faster&#x4F1A;&#x6CE8;&#x518C;&#x6EE1;&#x8DB3;app&#x63A5;&#x53E3;&#x5F00;&#x53D1;&#x7684;&#x6743;&#x9650;&#x62E6;&#x622A;&#x5668;AppAuthInterceptor&#x3002;</p>
+<p>&#x8BE5;&#x62E6;&#x622A;&#x5668;&#x901A;&#x8FC7;&#x62E6;&#x622A;&#x8BF7;&#x6C42;&#x5934;&#x4E2D;&#x7684;Authorization&#x5185;&#x5BB9;&#xFF0C;&#x53CD;&#x89E3;&#x51FA;jwt&#x5185;&#x5BB9;&#xFF0C;&#x89E3;&#x6790;&#x6210;&#x529F;&#x5373;&#x4E3A;&#x9A8C;&#x8BC1;&#x901A;&#x8FC7;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x5C06;token&#x5B58;&#x50A8;&#x5230;&#x7F13;&#x5B58;&#x4E2D;&#x5E76;&#x8BBE;&#x7F6E;&#x5931;&#x6548;&#x65F6;&#x95F4;&#x3002;&#x6B64;&#x65F6;&#x89E3;&#x6790;&#x51FA;jwt&#x5185;&#x5BB9;&#x540E;&#x6094;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7F13;&#x5B58;&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x5185;&#x5BB9;&#x8FDB;&#x884C;&#x6BD4;&#x5BF9;&#x3002;</p>
+<pre><code>@ConfigurationProperties(prefix = &quot;faster.auth&quot;)
+@Data
+public class AuthProperties {
+    /**
+     * &#x662F;&#x5426;&#x5F00;&#x542F;
+     */
+    private boolean enabled = true;
+    /**
+     * &#x6A21;&#x5F0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;app&#x6A21;&#x5F0F;
+     */
+    private String mode = &quot;app&quot;;
+
+    /**
+     * token&#x662F;&#x5426;&#x652F;&#x6301;&#x591A;&#x7EC8;&#x7AEF;&#xFF0C;&#x540C;&#x65F6;&#x53D7;&#x7F13;&#x5B58;&#x5F71;&#x54CD;
+     */
+    private boolean multipartTerminal = true;
+}
+</code></pre><p>&#x5982;&#x679C;&#x4E0D;&#x652F;&#x6301;&#x591A;&#x7AEF;&#x767B;&#x5F55;&#xFF0C;&#x4F1A;&#x5B58;&#x5165;&#x7F13;&#x5B58;&#x3002;</p>
+<h2 id="login"><a name="login" class="anchor-navigation-ex-anchor" href="#login"><i class="fa fa-link" aria-hidden="true"></i></a>@Login</h2>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x9700;&#x8981;&#x767B;&#x5F55;&#x7684;&#x63A5;&#x53E3;controller&#x6216;&#x65B9;&#x6CD5;&#x4E0A;&#x52A0;&#x5165;@Login&#x6CE8;&#x89E3;&#xFF0C;&#x6B64;&#x65F6;intceptor&#x5C06;&#x4F1A;&#x4E3A;&#x60A8;&#x84DD;&#x65D7;&#x3002;</p>
+<h2 id="appauthcontextfacade"><a name="appauthcontextfacade" class="anchor-navigation-ex-anchor" href="#appauthcontextfacade"><i class="fa fa-link" aria-hidden="true"></i></a>AppAuthContextFacade</h2>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;AppAuthContextFacade&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x767B;&#x5F55;&#x4FE1;&#x606F;&#x3002;</p>
+<pre><code>AppAuthContextFacade.getAppAuthContext.getUserId();
+</code></pre><p></p>
+<h2 id="jwtservice"><a name="jwtservice" class="anchor-navigation-ex-anchor" href="#jwtservice"><i class="fa fa-link" aria-hidden="true"></i></a>JwtService</h2>
+<p>JwtService&#x4E3A;&#x60A8;&#x63D0;&#x4F9B;&#x4E86;&#x521B;&#x5EFA;token&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x5E94;&#x7528;&#x7684;&#x767B;&#x5F55;&#x63A5;&#x53E3;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;token&#x5E76;&#x8FD4;&#x56DE;&#x7ED9;&#x524D;&#x7AEF;&#x3002;</p>
 
                                 
                                 </section>
@@ -577,7 +623,7 @@
 
             
                 
-                <a href="exception.html" class="navigation navigation-prev " aria-label="Previous page: Exception">
+                <a href="errorCode.html" class="navigation navigation-prev " aria-label="Previous page: ErrorCode">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -593,7 +639,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Auth","level":"1.5.6","depth":2,"next":{"title":"Upload","level":"1.5.7","depth":2,"path":"component/upload.md","ref":"component/upload.md","articles":[]},"previous":{"title":"Exception","level":"1.5.5","depth":2,"path":"component/exception.md","ref":"component/exception.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex","donate","copy-code-button"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://faster-framework.github.io/faster-framework-guide/static/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://faster-framework.github.io/faster-framework-guide/static/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"component/auth.md","mtime":"2018-06-18T05:57:28.917Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-18T05:57:57.701Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Auth","level":"1.5.7","depth":2,"next":{"title":"Upload","level":"1.5.8","depth":2,"path":"component/upload.md","ref":"component/upload.md","articles":[]},"previous":{"title":"ErrorCode","level":"1.5.6","depth":2,"path":"component/errorCode.md","ref":"component/errorCode.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex","donate","copy-code-button"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://faster-framework.github.io/faster-framework-guide/static/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://faster-framework.github.io/faster-framework-guide/static/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"component/auth.md","mtime":"2018-06-22T09:32:32.276Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-22T09:33:02.500Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

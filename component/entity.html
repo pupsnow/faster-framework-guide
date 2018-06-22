@@ -428,7 +428,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.6" data-path="auth.html">
+        <li class="chapter " data-level="1.5.6" data-path="errorCode.html">
+            
+                <a href="errorCode.html">
+            
+                    
+                    ErrorCode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="auth.html">
             
                 <a href="auth.html">
             
@@ -441,7 +454,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.7" data-path="upload.html">
+        <li class="chapter " data-level="1.5.8" data-path="upload.html">
             
                 <a href="upload.html">
             
@@ -454,7 +467,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.8" data-path="utils.html">
+        <li class="chapter " data-level="1.5.9" data-path="utils.html">
             
                 <a href="utils.html">
             
@@ -549,8 +562,65 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#entity"><b></b>Entity</a></li></ul></div><a href="#entity" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="entity"><a name="entity" class="anchor-navigation-ex-anchor" href="#entity"><i class="fa fa-link" aria-hidden="true"></i></a>Entity</h1>
-
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#entity"><b></b>Entity</a></li><ul><li><span class="title-icon "></span><a href="#baseentity"><b></b>BaseEntity</a></li><ul><li><span class="title-icon "></span><a href="#preinsert"><b></b>PreInsert</a></li><li><span class="title-icon "></span><a href="#preupdate"><b></b>PreUpdate</a></li></ul><li><span class="title-icon "></span><a href="#treenode"><b></b>TreeNode</a></li><ul><li><span class="title-icon "></span><a href="#&#x524D;&#x63D0;&#x6761;&#x4EF6;"><b></b>&#x524D;&#x63D0;&#x6761;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#&#x8F6C;&#x6362;&#x4E3A;&#x6811;&#x5F62;&#x7ED3;&#x6784;"><b></b>&#x8F6C;&#x6362;&#x4E3A;&#x6811;&#x5F62;&#x7ED3;&#x6784;</a></li></ul></ul></ul></div><a href="#entity" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="entity"><a name="entity" class="anchor-navigation-ex-anchor" href="#entity"><i class="fa fa-link" aria-hidden="true"></i></a>Entity</h1>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x5728;com.github.faster.framework.core.entity&#x5305;&#x4E0B;&#x770B;&#x5230;&#x57FA;&#x672C;&#x7684;Entity&#x3002;</p>
+<h2 id="baseentity"><a name="baseentity" class="anchor-navigation-ex-anchor" href="#baseentity"><i class="fa fa-link" aria-hidden="true"></i></a>BaseEntity</h2>
+<p>Faster&#x63D0;&#x4F9B;&#x4E86;&#x57FA;&#x672C;&#x7684;Entity&#x7528;&#x4E8E;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#x3002;</p>
+<p>&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5B9E;&#x4F53;&#x90FD;&#x5E94;&#x5F53;&#x7EE7;&#x627F;BaseEntity&#xFF0C;&#x62E5;&#x6709;&#x516C;&#x7528;&#x5B57;&#x6BB5;&#xFF0C;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x60A8;&#x81EA;&#x5DF1;&#x7684;&#x4E60;&#x60EF;&#x81EA;&#x884C;&#x5C01;&#x88C5;BaseEntity&#x3002;</p>
+<h3 id="preinsert"><a name="preinsert" class="anchor-navigation-ex-anchor" href="#preinsert"><i class="fa fa-link" aria-hidden="true"></i></a>PreInsert</h3>
+<p>BaseEntity&#x63D0;&#x4F9B;&#x4E86;preInsert&#x65B9;&#x6CD5;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x63D2;&#x5165;&#x6570;&#x636E;&#x5E93;&#x4E4B;&#x524D;&#x8C03;&#x7528;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x7684;&#x521B;&#x5EFA;&#x65F6;&#x95F4;&#x3001;&#x66F4;&#x65B0;&#x65F6;&#x95F4;&#x3001;&#x64CD;&#x4F5C;&#x7528;&#x6237;id&#x3001;&#x521B;&#x5EFA;&#x4EBA;&#x3001;&#x66F4;&#x65B0;&#x4EBA;&#x7B49;&#x3002;</p>
+<pre><code>public void insert(UserEntity user){
+    user.preInsert();
+}
+</code></pre><h3 id="preupdate"><a name="preupdate" class="anchor-navigation-ex-anchor" href="#preupdate"><i class="fa fa-link" aria-hidden="true"></i></a>PreUpdate</h3>
+<p>&#x540C;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;preUpdate&#x65B9;&#x6CD5;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x66F4;&#x65B0;&#x5B9E;&#x4F53;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4E4B;&#x524D;&#x8C03;&#x7528;&#x3002;</p>
+<pre><code>public void update(UserEntity user){
+    user.preUpdate();
+}
+</code></pre><h2 id="treenode"><a name="treenode" class="anchor-navigation-ex-anchor" href="#treenode"><i class="fa fa-link" aria-hidden="true"></i></a>TreeNode</h2>
+<p>&#x5BF9;&#x4E8E;&#x65E0;&#x9650;&#x7EA7;&#x6811;&#x72B6;&#x7ED3;&#x6784;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x5B9E;&#x4F53;&#x5B9E;&#x73B0;TreeNode&#x63A5;&#x53E3;&#x3002;</p>
+<p>&#x4E4B;&#x540E;&#x60A8;&#x4FBF;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;faster&#x63D0;&#x4F9B;&#x7684;&#x5DE5;&#x5177;&#x5C06;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x5217;&#x8868;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x4E3A;&#x6811;&#x5F62;&#x7ED3;&#x6784;&#xFF08;&#x65E0;&#x9650;&#x7EA7;&#xFF09;&#x3002;</p>
+<p>&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>@Getter
+@Setter
+@Table
+public class SysPermission extends BaseEntity implements TreeNode {
+    private String name;
+    private String code;
+    private Long parentId;
+    private String parentIds;
+    private List&lt;TreeNode&gt; children;
+}
+</code></pre><h3 id="&#x524D;&#x63D0;&#x6761;&#x4EF6;"><a name="&#x524D;&#x63D0;&#x6761;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x524D;&#x63D0;&#x6761;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x524D;&#x63D0;&#x6761;&#x4EF6;</h3>
+<p>&#x7531;&#x4E8E;&#x9012;&#x5F52;&#x64CD;&#x4F5C;&#x4F1A;&#x5F71;&#x54CD;&#x6027;&#x80FD;&#xFF0C;&#x6240;&#x4EE5;faster&#x4E0D;&#x4F7F;&#x7528;&#x9012;&#x5F52;&#x5904;&#x7406;&#x6811;&#x5F62;&#x7ED3;&#x6784;&#x7684;&#x7EC4;&#x5EFA;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x60A8;&#x7684;&#x5217;&#x8868;&#x6570;&#x636E;&#xFF0C;&#x6309;&#x7167;&#x5C42;&#x7EA7;&#x4ECE;&#x4F4E;&#x5230;&#x9AD8;&#x7684;&#x987A;&#x5E8F;&#x6392;&#x5217;&#x3002;&#x4EE5;&#x4FBF;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5FAA;&#x73AF;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x60A8;&#x9700;&#x8981;&#x5728;&#x60A8;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E2D;&#x5EFA;&#x7ACB;&#x7C7B;&#x4F3C;level&#x3001;parent_ids&#x7B49;&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x5C42;&#x7EA7;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x5E76;&#x5728;&#x53D6;&#x51FA;&#x6570;&#x636E;&#x65F6;&#xFF08;&#x540E;&#xFF09;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6B63;&#x5E8F;&#x6392;&#x5E8F;&#x3002;</p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x53C2;&#x7167;&#x4E0B;&#x65B9;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code>List&lt;SysPermission&gt; list = sysPermissionMapper.selectByExample(
+                Example.builder(SysPermission.class)
+                        .where(WeekendSqls.&lt;SysPermission&gt;custom().andEqualTo(SysPermission::getDeleted, 0))
+                        .orderByAsc(
+                                &quot;parentIds&quot;
+                        ).build()
+        ).stream().sorted(Comparator.comparing(BaseEntity::getSort)).collect(Collectors.toList());
+</code></pre><h3 id="&#x8F6C;&#x6362;&#x4E3A;&#x6811;&#x5F62;&#x7ED3;&#x6784;"><a name="&#x8F6C;&#x6362;&#x4E3A;&#x6811;&#x5F62;&#x7ED3;&#x6784;" class="anchor-navigation-ex-anchor" href="#&#x8F6C;&#x6362;&#x4E3A;&#x6811;&#x5F62;&#x7ED3;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8F6C;&#x6362;&#x4E3A;&#x6811;&#x5F62;&#x7ED3;&#x6784;</h3>
+<p>&#x5728;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x540E;&#xFF0C;&#x60A8;&#x4FBF;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;faster&#x63D0;&#x4F9B;&#x7684;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5DE5;&#x5177;&#x7C7B;&#xFF0C;&#x8F6C;&#x6362;&#x6210;&#x6211;&#x4EEC;&#x6240;&#x9700;&#x7684;&#x6811;&#x5F62;&#x7ED3;&#x6784;&#x5217;&#x8868;&#x3002;</p>
+<pre><code>TreeUtils.convertToTree(list);
+</code></pre><p>&#x5B8C;&#x6574;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code> /**
+     * @return &#x6743;&#x9650;&#x6811;
+     */
+    public List&lt;TreeNode&gt; treeList() {
+        List&lt;SysPermission&gt; list = sysPermissionMapper.selectByExample(
+                Example.builder(SysPermission.class)
+                        .where(WeekendSqls.&lt;SysPermission&gt;custom().andEqualTo(SysPermission::getDeleted, 0))
+                        .orderByAsc(
+                                &quot;parentIds&quot;
+                        ).build()
+        ).stream().sorted(Comparator.comparing(BaseEntity::getSort)).collect(Collectors.toList());
+        return TreeUtils.convertToTree(list);
+    }
+</code></pre>
                                 
                                 </section>
                             
@@ -593,7 +663,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Entity","level":"1.5.2","depth":2,"next":{"title":"Cache","level":"1.5.3","depth":2,"path":"component/cache.md","ref":"component/cache.md","articles":[]},"previous":{"title":"Mybatis","level":"1.5.1","depth":2,"path":"component/mybatis.md","ref":"component/mybatis.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex","donate","copy-code-button"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://faster-framework.github.io/faster-framework-guide/static/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://faster-framework.github.io/faster-framework-guide/static/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"component/entity.md","mtime":"2018-06-18T05:57:28.927Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-18T05:57:57.701Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Entity","level":"1.5.2","depth":2,"next":{"title":"Cache","level":"1.5.3","depth":2,"path":"component/cache.md","ref":"component/cache.md","articles":[]},"previous":{"title":"Mybatis","level":"1.5.1","depth":2,"path":"component/mybatis.md","ref":"component/mybatis.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex","donate","copy-code-button"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://faster-framework.github.io/faster-framework-guide/static/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://faster-framework.github.io/faster-framework-guide/static/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"component/entity.md","mtime":"2018-06-22T09:32:32.276Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-22T09:33:02.500Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
