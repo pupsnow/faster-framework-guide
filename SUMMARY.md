@@ -24,6 +24,7 @@
     * [Cache](component/cache.md)
     * [Web](component/web.md)
     * [Exception](component/exception.md)
+    * [ErrorCode](component/errorCode.md)
     * [Auth](component/auth.md)
     * [Upload](component/upload.md)
     * [Utils](component/utils.md)
