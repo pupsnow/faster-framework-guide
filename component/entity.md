@@ -1,4 +1,4 @@
-# Entity
+# 基础实体
 
 您可以在com.github.faster.framework.core.entity包下看到基本的Entity。
 

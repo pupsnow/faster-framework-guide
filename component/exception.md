@@ -1,4 +1,4 @@
-# Exception
+# 异常
 
 我们不建议您使用Exception控制异常业务逻辑。
 
