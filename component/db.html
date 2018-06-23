@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Mybatis · GitBook</title>
+        <title>数据库 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -363,12 +363,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.5.1" data-path="mybatis.html">
+        <li class="chapter active" data-level="1.5.1" data-path="db.html">
             
-                <a href="mybatis.html">
+                <a href="db.html">
             
                     
-                    Mybatis
+                    数据库
             
                 </a>
             
@@ -381,7 +381,7 @@
                 <a href="entity.html">
             
                     
-                    Entity
+                    基础实体
             
                 </a>
             
@@ -394,7 +394,7 @@
                 <a href="cache.html">
             
                     
-                    Cache
+                    缓存
             
                 </a>
             
@@ -407,7 +407,7 @@
                 <a href="web.html">
             
                     
-                    Web
+                    Web组件
             
                 </a>
             
@@ -420,7 +420,7 @@
                 <a href="exception.html">
             
                     
-                    Exception
+                    异常
             
                 </a>
             
@@ -428,12 +428,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.6" data-path="errorCode.html">
+        <li class="chapter " data-level="1.5.6" data-path="error-code.html">
             
-                <a href="errorCode.html">
+                <a href="error-code.html">
             
                     
-                    ErrorCode
+                    错误码
             
                 </a>
             
@@ -446,7 +446,7 @@
                 <a href="auth.html">
             
                     
-                    Auth
+                    权限
             
                 </a>
             
@@ -459,7 +459,7 @@
                 <a href="upload.html">
             
                     
-                    Upload
+                    上传组件
             
                 </a>
             
@@ -472,7 +472,7 @@
                 <a href="utils.html">
             
                     
-                    Utils
+                    工具包
             
                 </a>
             
@@ -499,12 +499,51 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../admin/api-doc.html">
+        <li class="chapter " data-level="1.6.1" data-path="../admin/started.html">
+            
+                <a href="../admin/started.html">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../admin/api-doc.html">
             
                 <a href="../admin/api-doc.html">
             
                     
                     接口文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../admin/auth.html">
+            
+                <a href="../admin/auth.html">
+            
+                    
+                    认证授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../admin/router-permission.html">
+            
+                <a href="../admin/router-permission.html">
+            
+                    
+                    路由权限
             
                 </a>
             
@@ -547,7 +586,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Mybatis</a>
+        <a href=".." >数据库</a>
     </h1>
 </div>
 
@@ -562,7 +601,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#mybatis"><b></b>Mybatis</a></li><ul><li><span class="title-icon "></span><a href="#&#x6570;&#x636E;&#x5E93;&#x901A;&#x7528;&#x64CD;&#x4F5C;"><b></b>&#x6570;&#x636E;&#x5E93;&#x901A;&#x7528;&#x64CD;&#x4F5C;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5982;&#x4F55;&#x4F7F;&#x7528;basemapper"><b></b>&#x5982;&#x4F55;&#x4F7F;&#x7528;BaseMapper</a></li><li><span class="title-icon "></span><a href="#basemapper&#x5185;&#x7F6E;&#x65B9;&#x6CD5;"><b></b>BaseMapper&#x5185;&#x7F6E;&#x65B9;&#x6CD5;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5206;&#x9875;&#x63D2;&#x4EF6;"><b></b>&#x5206;&#x9875;&#x63D2;&#x4EF6;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x5206;&#x9875;&#x63D2;&#x4EF6;"><b></b>&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x5206;&#x9875;&#x63D2;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#&#x5206;&#x9875;&#x65B9;&#x6CD5;"><b></b>&#x5206;&#x9875;&#x65B9;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#&#x5206;&#x9875;&#x6269;&#x5C55;"><b></b>&#x5206;&#x9875;&#x6269;&#x5C55;</a></li></ul></ul></ul></div><a href="#mybatis" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="mybatis"><a name="mybatis" class="anchor-navigation-ex-anchor" href="#mybatis"><i class="fa fa-link" aria-hidden="true"></i></a>Mybatis</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x6570;&#x636E;&#x5E93;"><b></b>&#x6570;&#x636E;&#x5E93;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6570;&#x636E;&#x5E93;&#x901A;&#x7528;&#x64CD;&#x4F5C;"><b></b>&#x6570;&#x636E;&#x5E93;&#x901A;&#x7528;&#x64CD;&#x4F5C;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5982;&#x4F55;&#x4F7F;&#x7528;basemapper"><b></b>&#x5982;&#x4F55;&#x4F7F;&#x7528;BaseMapper</a></li><li><span class="title-icon "></span><a href="#basemapper&#x5185;&#x7F6E;&#x65B9;&#x6CD5;"><b></b>BaseMapper&#x5185;&#x7F6E;&#x65B9;&#x6CD5;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5206;&#x9875;&#x63D2;&#x4EF6;"><b></b>&#x5206;&#x9875;&#x63D2;&#x4EF6;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x5206;&#x9875;&#x63D2;&#x4EF6;"><b></b>&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x5206;&#x9875;&#x63D2;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#&#x5206;&#x9875;&#x65B9;&#x6CD5;"><b></b>&#x5206;&#x9875;&#x65B9;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#&#x5206;&#x9875;&#x6269;&#x5C55;"><b></b>&#x5206;&#x9875;&#x6269;&#x5C55;</a></li></ul></ul></ul></div><a href="#&#x6570;&#x636E;&#x5E93;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x6570;&#x636E;&#x5E93;"><a name="&#x6570;&#x636E;&#x5E93;" class="anchor-navigation-ex-anchor" href="#&#x6570;&#x636E;&#x5E93;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6570;&#x636E;&#x5E93;</h1>
+<p>&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;&#x6211;&#x4EEC;&#x9009;&#x7528;Mybatis&#x6846;&#x67B6;&#x3002;</p>
 <p>&#x60A8;&#x53EF;&#x4EE5;&#x5728;com.github.faster.framework.core.mybatis&#x5305;&#x4E0B;&#x770B;&#x5230;&#x6211;&#x4EEC;&#x5BF9;mybatis&#x6240;&#x505A;&#x7684;&#x6269;&#x5C55;&#x4E0E;&#x5C01;&#x88C5;&#x3002;</p>
 <h2 id="&#x6570;&#x636E;&#x5E93;&#x901A;&#x7528;&#x64CD;&#x4F5C;"><a name="&#x6570;&#x636E;&#x5E93;&#x901A;&#x7528;&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#&#x6570;&#x636E;&#x5E93;&#x901A;&#x7528;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6570;&#x636E;&#x5E93;&#x901A;&#x7528;&#x64CD;&#x4F5C;</h2>
 <p>&#x5F53;&#x7CFB;&#x7EDF;&#x62BD;&#x8C61;&#x5230;&#x4E00;&#x5B9A;&#x9AD8;&#x5EA6;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x5F00;&#x53D1;&#x5C06;&#x4F1A;&#x56DE;&#x5F52;&#x5230;&#x539F;&#x59CB;&#x7684;&#x589E;&#x5220;&#x6539;&#x67E5;&#x3002;</p>
@@ -768,7 +808,7 @@ select username,password,ifNull(username,&apos;defaultName&apos;) as nameDefault
                 </a>
                 
                 
-                <a href="entity.html" class="navigation navigation-next " aria-label="Next page: Entity">
+                <a href="entity.html" class="navigation navigation-next " aria-label="Next page: 基础实体">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -779,7 +819,7 @@ select username,password,ifNull(username,&apos;defaultName&apos;) as nameDefault
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Mybatis","level":"1.5.1","depth":2,"next":{"title":"Entity","level":"1.5.2","depth":2,"path":"component/entity.md","ref":"component/entity.md","articles":[]},"previous":{"title":"功能组件","level":"1.5","depth":1,"path":"component/README.md","ref":"component/README.md","articles":[{"title":"Mybatis","level":"1.5.1","depth":2,"path":"component/mybatis.md","ref":"component/mybatis.md","articles":[]},{"title":"Entity","level":"1.5.2","depth":2,"path":"component/entity.md","ref":"component/entity.md","articles":[]},{"title":"Cache","level":"1.5.3","depth":2,"path":"component/cache.md","ref":"component/cache.md","articles":[]},{"title":"Web","level":"1.5.4","depth":2,"path":"component/web.md","ref":"component/web.md","articles":[]},{"title":"Exception","level":"1.5.5","depth":2,"path":"component/exception.md","ref":"component/exception.md","articles":[]},{"title":"ErrorCode","level":"1.5.6","depth":2,"path":"component/errorCode.md","ref":"component/errorCode.md","articles":[]},{"title":"Auth","level":"1.5.7","depth":2,"path":"component/auth.md","ref":"component/auth.md","articles":[]},{"title":"Upload","level":"1.5.8","depth":2,"path":"component/upload.md","ref":"component/upload.md","articles":[]},{"title":"Utils","level":"1.5.9","depth":2,"path":"component/utils.md","ref":"component/utils.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex","donate","copy-code-button"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://faster-framework.github.io/faster-framework-guide/static/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://faster-framework.github.io/faster-framework-guide/static/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"component/mybatis.md","mtime":"2018-06-22T09:38:23.291Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-22T09:40:37.506Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数据库","level":"1.5.1","depth":2,"next":{"title":"基础实体","level":"1.5.2","depth":2,"path":"component/entity.md","ref":"component/entity.md","articles":[]},"previous":{"title":"功能组件","level":"1.5","depth":1,"path":"component/README.md","ref":"component/README.md","articles":[{"title":"数据库","level":"1.5.1","depth":2,"path":"component/db.md","ref":"component/db.md","articles":[]},{"title":"基础实体","level":"1.5.2","depth":2,"path":"component/entity.md","ref":"component/entity.md","articles":[]},{"title":"\b缓存","level":"1.5.3","depth":2,"path":"component/cache.md","ref":"component/cache.md","articles":[]},{"title":"Web组件","level":"1.5.4","depth":2,"path":"component/web.md","ref":"component/web.md","articles":[]},{"title":"异常","level":"1.5.5","depth":2,"path":"component/exception.md","ref":"component/exception.md","articles":[]},{"title":"错误码","level":"1.5.6","depth":2,"path":"component/error-code.md","ref":"component/error-code.md","articles":[]},{"title":"权限","level":"1.5.7","depth":2,"path":"component/auth.md","ref":"component/auth.md","articles":[]},{"title":"上传组件","level":"1.5.8","depth":2,"path":"component/upload.md","ref":"component/upload.md","articles":[]},{"title":"工具包","level":"1.5.9","depth":2,"path":"component/utils.md","ref":"component/utils.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex","donate","copy-code-button"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://faster-framework.github.io/faster-framework-guide/static/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://faster-framework.github.io/faster-framework-guide/static/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"component/db.md","mtime":"2018-06-23T13:57:13.342Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-23T14:49:23.818Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
