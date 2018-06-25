@@ -20,10 +20,15 @@ Faster内置了图片上传接口，由于图片上传方式众多。
 @ConfigurationProperties(prefix = "faster.upload.local")
 @Data
 public class LocalUploadProperties {
+    /**
+     * 文件的存储目录
+     */
     private String fileDir;
+    /**
+     * 请求图片时的网址前缀
+     */
     private String urlPrefix;
 }
-
 ```
 
 ### 上传流程
@@ -42,52 +47,42 @@ public class LocalUploadProperties {
     }
 ```
 
-```
-@Data
-public class UploadRequest {
-    /**
-     * 是否覆盖 0.否 1.是
-     */
-    private Integer isCover = 1;
-
-    /**
-     * 要存储的文件名称
-     */
-    private String fileName;
-
-    /**
-     * 上传token
-     */
-    private String token;
-
-    /**
-     * 模式
-     */
-    private String mode;
-
-
-}
-
-```
-
 接下来我们便可以调用上传接口上传图片。
 
 
 ```
-    /**
+  /**
      * 上传文件
      *
-     * @param uploadFile 文件
+     * @param uploadFile    文件
      * @param uploadRequest 上传请求
+     * @param token         签名字符串
      * @return httpResponse
      */
     @PostMapping("/upload")
-    public ResponseEntity upload(@RequestParam("file") MultipartFile uploadFile, UploadRequest uploadRequest) {
+    public ResponseEntity upload(@RequestParam("file") MultipartFile uploadFile, UploadRequest uploadRequest,String token) {
         try {
-            return ResponseEntity.ok(uploadService.upload(uploadFile, uploadRequest));
+            return ResponseEntity.ok(uploadService.upload(uploadFile, uploadRequest, token));
         } catch (IOException e) {
             return ErrorResponseEntity.error(BasisErrorCode.SERVER_ERROR, HttpStatus.INTERNAL_SERVER_ERROR);
         }
+    }
+```
+
+上传成功后，系统会返回上传地址。由于我们是图片存储在本地服务器，故我们需要提供请求图片接口。（当然你可以使用ngixn进行代理）。
+
+```
+ /**
+     * 预览、下载上传的文件
+     *
+     * @param fileName 文件名称
+     * @return 文件流
+     */
+    @GetMapping("/files/{fileName}")
+    public ResponseEntity preview(@PathVariable String fileName) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+        return new ResponseEntity<>(uploadService.files(fileName), headers, HttpStatus.OK);
     }
 ```
 
@@ -102,9 +97,9 @@ public class UploadController extends AbstractUploadController{}
 
 继承后，您可以：
 
-通过http://xxx.com/upload/preload获取token
+通过http://xxx.com/upload/preload  获取token
 
-通过http://xxx.com/upload上传图片
+通过http://xxx.com/upload   上传图片
 
 
 ## 自定义上传
