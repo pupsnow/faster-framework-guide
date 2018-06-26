@@ -436,3 +436,44 @@ name|N|用户姓名
 	]
 }
 ```
+
+
+#4. 基础模块
+
+## 4.1 上传图片
+### 4.1.1 获取签名
+- /upload/preload
+- get
+- response
+
+```
+{
+	"sign":"加密token",
+	"timestamp":"时间戳"
+}
+```
+
+### 4.1.2 上传图片
+- /upload
+- post
+- header
+
+header_name|header_value|Description
+---|---|---
+content-type|multipart/form-data| 多格式表单
+
+- Form Parameter
+
+key|value|Description
+---|---|--
+file|文件|文件流
+timestamp|时间戳|预上传接口返回
+token|加密字符串|预上传接口返回的sign字段
+
+- reponse
+
+```
+{
+	"url":"上传成功后图片地址"
+}
+```
