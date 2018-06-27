@@ -317,6 +317,21 @@ name|N|角色名称
 }
 ```
 
+### 3.2.7 角色权限列表
+
+- /sys/roles/{roleId}/permissions
+- get
+- response
+
+```
+[
+	"1",//权限id
+	"2",
+	"3",
+	"4"
+]
+```
+
 ## 3.3 用户管理
 
 - users:manage
