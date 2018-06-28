@@ -41,12 +41,12 @@ public class AuthProperties {
 
 您可以在需要登录的接口controller或方法上加入@Login注解，此时intceptor将会为您蓝旗。
 
-## AppAuthContextFacade
+## WebContextFacade
 
-您可以通过AppAuthContextFacade获取当前登录信息。
+您可以通过WebContextFacade获取当前登录信息。
 
 ```
-AppAuthContextFacade.getAppAuthContext.getUserId();
+WebContextFacade.getRequestContext.getUserId();
 ```
 
 
