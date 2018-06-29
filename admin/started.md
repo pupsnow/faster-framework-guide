@@ -10,6 +10,31 @@
 compile "com.github.faster-framework:faster-framework-admin-spring-boot-starter:{最新版本}"
 ```
 
+## 完整gradle配置
+
+```
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.0.2.RELEASE'
+}
+
+group 'test-framework'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    mavenCentral()
+}
+sourceSets.main.resources.srcDirs = ["src/main/java", "src/main/resources"]
+
+dependencies {
+    compile "com.github.faster-framework:faster-framework-admin-spring-boot-starter:{最新版本}"
+}
+
+```
+
 ## 配置
 
 您需要在application.yml中引入admin组件的配置文件。如下：

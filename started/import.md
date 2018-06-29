@@ -33,11 +33,7 @@ repositories {
     maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     mavenCentral()
 }
-processResources {
-    from('src/main/java') {
-        include '**/*.xml'
-    }
-}
+sourceSets.main.resources.srcDirs = ["src/main/java", "src/main/resources"]
 
 ```
 
@@ -68,14 +64,10 @@ repositories {
     maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     mavenCentral()
 }
-processResources {
-    from('src/main/java') {
-        include '**/*.xml'
-    }
-}
+sourceSets.main.resources.srcDirs = ["src/main/java", "src/main/resources"]
 
 dependencies {
-    compile "com.github.faster-framework:faster-framework-core-spring-boot-starter:1.0.0.RELEASE"
+    compile "com.github.faster-framework:faster-framework-core-spring-boot-starter:{最新版本}"
 }
 
 ```
