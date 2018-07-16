@@ -1,4 +1,5 @@
-# 接口文档
+接口文档
+
 # 1. 基本概述
 ## 1.1 关于REST
 ### 1.1.1 关于REST
@@ -107,7 +108,9 @@ Code|状态|描述
 ```
 {
 	"account":"用户名",
-	"password":"密码"
+	"password":"密码",
+	"captcha":"图形验证码",
+	"captchaToken":"图形验证码token"
 }
 ```
 
@@ -149,9 +152,9 @@ Code|状态|描述
 
 ### 3.1.1 权限树
 
-- /sys/permissions
+- /sys/permissions/tree
 - get
-- permissions:list
+- permissions:tree
 - response
 
 ```
@@ -208,7 +211,7 @@ Code|状态|描述
 
 - /sys/permissions/{permissionId}
 - put
-- permissions:edit
+- permissions:modify
 - request
 
 ```
@@ -224,8 +227,31 @@ Code|状态|描述
 - permissions:delete
 - delete
 
+### 3.1.6 全部权限列表
+
+- /sys/permissions/list
+- get
+- permissions:list
+- response
+
+```
+[
+	{
+		"id":"主键id",
+		"name":"权限名称",
+		"code":"权限编码",
+		"parentId":"父id",
+		"parentIds":"父id列表",
+		"createBy":"创建人id",
+		"updateBy":"最后更新人时间",
+		"createDate":"创建时间",
+		"updateDate":"最后更新时间"
+]
+```
+
 ## 3.2 角色管理
 - roles:manage
+
 ### 3.2.1 角色列表
 - /sys/roles
 - get
@@ -332,6 +358,7 @@ name|N|角色名称
 ]
 ```
 
+
 ## 3.3 用户管理
 
 - users:manage
@@ -431,7 +458,7 @@ name|N|用户姓名
 
 ### 3.2.7 重置密码
 
-- /sys/{userId}/password/reset
+- /sys/users/{userId}/password/reset
 - users:password:reset
 - put
 
@@ -452,8 +479,23 @@ name|N|用户姓名
 }
 ```
 
+### 3.2.9 用户角色列表
 
-#4. 基础模块
+- /sys/users/{userId}/roles
+- get
+- users:roles
+- response
+
+```
+[
+	1,//角色id
+	2,
+	3,
+	5
+]
+```
+
+# 4. 基础模块
 
 ## 4.1 上传图片
 ### 4.1.1 获取签名
@@ -490,5 +532,18 @@ token|加密字符串|预上传接口返回的sign字段
 ```
 {
 	"url":"上传成功后图片地址"
+}
+```
+
+## 4.2 获取图形验证码
+
+- /captcha
+- get
+- response
+
+```
+{
+	"token":"token",
+	"img":"base64编码"
 }
 ```
