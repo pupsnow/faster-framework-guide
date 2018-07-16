@@ -28,6 +28,7 @@
     * [权限](component/auth.md)
     * [上传组件](component/upload.md)
     * [工具包](component/utils.md)
+    * [图形验证码](component/captcha.md)
 * [Admin](admin/README.md)
     * [快速开始](admin/started.md)
     * [接口文档](admin/api-doc.md)

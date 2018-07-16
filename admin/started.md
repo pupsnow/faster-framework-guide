@@ -4,10 +4,10 @@
 
 ## 引入
 
-当您使用admin的依赖包时，便无须引入core包，admin已经将其包含其中。
 
 ```
-compile "com.github.faster-framework:faster-framework-admin-spring-boot-starter:{最新版本}"
+compile "com.github.faster-framework:faster-framework-core-spring-boot-starter:${lastVersion}"
+compile "com.github.faster-framework:faster-framework-admin-spring-boot-starter:${lastVersion}"
 ```
 
 ## 完整gradle配置
@@ -30,7 +30,8 @@ repositories {
 sourceSets.main.resources.srcDirs = ["src/main/java", "src/main/resources"]
 
 dependencies {
-    compile "com.github.faster-framework:faster-framework-admin-spring-boot-starter:{最新版本}"
+   compile "com.github.faster-framework:faster-framework-core-spring-boot-starter:${lastVersion}"
+   compile "com.github.faster-framework:faster-framework-admin-spring-boot-starter:${lastVersion}"
 }
 
 ```
