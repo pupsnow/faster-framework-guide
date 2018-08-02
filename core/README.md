@@ -1,6 +1,6 @@
-# 功能组件
+# 核心功能
 
-本章将为您介绍faster中所集成的组件。faster组件都是开箱即用的。您可以通过或者查看源码来修改或扩展。
+本章将为您介绍faster核心包，[Faster-Framework-Core](https://github.com/faster-framework/faster-framework-core)。faster核心包中的组件都是开箱即用的。您可以通过或者查看源码来修改或扩展。
 
 同样，如果您发现需要改进的地方，欢迎您联系我们。
 
