@@ -150,6 +150,15 @@ ContextInterceptor为您保存了当前请求的ip、访问的uri等信息。
 WebContextFacade.getRequestContext().getIp();
 ```
 
+### RequestContext
+
+您可以使用autowired形式注入RequestContext。我们已经保证了其变量为线程安全的。
+
+```
+@Autowired
+private RequestContext requestContext;
+```
+
 ## 版本控制
 
 我们针对接口提供了版本控制。方便您在开发时解耦多版本接口。
