@@ -159,6 +159,9 @@ WebContextFacade.getRequestContext().getIp();
 private RequestContext requestContext;
 ```
 
+此处原理可百度ObjectFactory。
+
+
 ## 版本控制
 
 我们针对接口提供了版本控制。方便您在开发时解耦多版本接口。

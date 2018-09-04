@@ -121,9 +121,27 @@ public class UploadProperties {
      */
     private boolean enabled = true;
     /**
-     * 上传模式（local本地）
+     * 本地模式
      */
-    private String mode = "local";
+    private LocalUploadProperties local = new LocalUploadProperties();
+
+
+    @ConfigurationProperties(prefix = "faster.upload.local")
+    @Data
+    public static class LocalUploadProperties {
+        /**
+         * 是否开启
+         */
+        private boolean enabled;
+        /**
+         * 文件的存储目录
+         */
+        private String fileDir;
+        /**
+         * 请求图片时的网址前缀
+         */
+        private String urlPrefix;
+    }
 }
 
 ```
@@ -133,19 +151,14 @@ public class UploadProperties {
 您需要将组建注册进Spring。
 
 ```
- @Configuration
-    @ConditionalOnProperty(prefix = "faster.upload", name = "mode", havingValue = "{YourModeName}")
-    @EnableConfigurationProperties({ProjectProperties.class, YourUploadProperties.class, UploadProperties.class})
+    @Configuration
+    @ConditionalOnProperty(prefix = "faster.upload.{youUploadName}", name = "enabled", havingValue = "true")
+    @EnableConfigurationProperties({ProjectProperties.class, UploadProperties.YourUploadProperties.class})
+    @ConditionalOnMissingBean(IUploadService.class)
     public static class YourUploadConfiguration {
-        @Autowired
-        private ProjectProperties projectProperties;
-        @Autowired
-        private YourUploadProperties localUploadProperties;
-        @Autowired
-        private UploadProperties uploadProperties;
 
         @Bean
-        public IUploadService yourUpload() {
+        public IUploadService localUpload(ProjectProperties projectProperties, UploadProperties.YourUploadProperties localUploadProperties) {
             return new YourUploadService();
         }
     }

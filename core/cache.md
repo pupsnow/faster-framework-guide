@@ -22,11 +22,20 @@ public class CacheProperties {
     /**
      * 是否开启缓存
      */
-    private boolean enabled = true;
+    private boolean enabled;
     /**
-     * 是否为本地模式
+     * Redis缓存配置
      */
-    private boolean local = true;
+    private RedisProperties redis = new RedisProperties();
+
+    @ConfigurationProperties(prefix = "faster.cache.redis")
+    @Data
+    public static class RedisProperties {
+        /**
+         * 是否开启redis缓存
+         */
+        private boolean enabled;
+    }
 }
 ```
 
@@ -110,7 +119,7 @@ public class CacheProperties {
 
 ### RedisCacheService
 
-我们同样提供了RedisCacheService作为外部缓存存储。您可以通过配置进行切换(local=false)。
+我们同样提供了RedisCacheService作为外部缓存存储。您可以通过配置进行切换(faster.cache.redis.enabled=true)。
 
 您可以对redis进行额外配置，通过spring所提供的redis配置。
 
@@ -181,14 +190,29 @@ public interface ICacheService<V> {
 ```
 
 
-我们依然建议您在本地开发环境时使用本地缓存，如果您认为这是多余的，您可以去除@ConditionalOnProperty注解。
-
-注册缓存代码如下：
+注册自定义缓存：
 
 ```
-    @Bean("cacheService")
-    @ConditionalOnProperty(prefix = "faster.cache", name = "local", havingValue = "false")
+    /**
+     *
+     * @return 自定义缓存
+     */
+    @ConditionalOnMissingBean(ICacheService.class)
+    @ConditionalOnProperty(prefix = "faster.cache.custom", name = "enabled", havingValue = "true")
+    @Bean
     public ICacheService customCacheService() {
-        return new CustomCacheService();
-}
+        CustomCacheService cacheService = new CustomCacheService();
+        initCache(cacheService, false);
+        return cacheService;
+    }
+```
+
+启用配置：
+application.yml
+
+```
+faster:
+    cache:
+        custom:
+            enabled: true
 ```

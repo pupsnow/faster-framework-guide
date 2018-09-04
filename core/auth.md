@@ -49,6 +49,14 @@ public class AuthProperties {
 WebContextFacade.getRequestContext.getUserId();
 ```
 
+您也可以使用autowired形式注入RequestContext。我们已经保证了其变量为线程安全的。
+
+```
+@Autowired
+private RequestContext requestContext;
+
+requestContext.getUserId();
+```
 
 ## JwtService
 

@@ -45,6 +45,9 @@
     * [表单](admin-web/form.md)
     * [图片上传](admin-web/upload.md)
     * [富文本编辑器](admin-web/rich-text.md)
+* [SMS](sms/README.md)
+    * [快速开始](sms/started.md)
+    * [短信验证码](sms/captcha.md)
 * [Builder](builder/README.md)
     * [快速开始](builder/started.md)
 
