@@ -718,7 +718,52 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="../builder/">
+        <li class="chapter " data-level="1.8" data-path="../sms/">
+            
+                <a href="../sms/">
+            
+                    
+                    SMS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../sms/started.html">
+            
+                <a href="../sms/started.html">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../sms/captcha.html">
+            
+                <a href="../sms/captcha.html">
+            
+                    
+                    短信验证码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../builder/">
             
                 <a href="../builder/">
             
@@ -732,7 +777,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="../builder/started.html">
+        <li class="chapter " data-level="1.9.1" data-path="../builder/started.html">
             
                 <a href="../builder/started.html">
             
@@ -811,11 +856,20 @@ public class CacheProperties {
     /**
      * &#x662F;&#x5426;&#x5F00;&#x542F;&#x7F13;&#x5B58;
      */
-    private boolean enabled = true;
+    private boolean enabled;
     /**
-     * &#x662F;&#x5426;&#x4E3A;&#x672C;&#x5730;&#x6A21;&#x5F0F;
+     * Redis&#x7F13;&#x5B58;&#x914D;&#x7F6E;
      */
-    private boolean local = true;
+    private RedisProperties redis = new RedisProperties();
+
+    @ConfigurationProperties(prefix = &quot;faster.cache.redis&quot;)
+    @Data
+    public static class RedisProperties {
+        /**
+         * &#x662F;&#x5426;&#x5F00;&#x542F;redis&#x7F13;&#x5B58;
+         */
+        private boolean enabled;
+    }
 }
 </code></pre><h3 id="cachefacade"><a name="cachefacade" class="anchor-navigation-ex-anchor" href="#cachefacade"><i class="fa fa-link" aria-hidden="true"></i></a>CacheFacade</h3>
 <p>&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x5916;&#x89C2;&#x6A21;&#x5F0F;&#x5BF9;&#x7F13;&#x5B58;&#x8FDB;&#x884C;&#x5C01;&#x88C5;&#xFF0C;&#x4EE5;&#x8FBE;&#x5230;&#x5BF9;&#x5916;&#x4E00;&#x81F4;&#x3002;
@@ -887,7 +941,7 @@ public class CacheProperties {
 <h3 id="localcacheservice"><a name="localcacheservice" class="anchor-navigation-ex-anchor" href="#localcacheservice"><i class="fa fa-link" aria-hidden="true"></i></a>LocalCacheService</h3>
 <p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x672C;&#x5730;&#x7F13;&#x5B58;LocalCacheService&#xFF0C;&#x5B83;&#x5C06;&#x7F13;&#x5B58;&#x5B58;&#x50A8;&#x5728;&#x672C;&#x5730;&#x3002;&#x6211;&#x4EEC;&#x4F7F;&#x7528;ConcurrentReferenceHashMap&#x4FDD;&#x8BC1;&#x5176;&#x5E76;&#x53D1;&#x60C5;&#x51B5;&#x4E0B;&#x7684;&#x5B89;&#x5168;&#x5F15;&#x7528;&#x4E0E;&#x8D44;&#x6E90;&#x91CA;&#x653E;&#x3002;</p>
 <h3 id="rediscacheservice"><a name="rediscacheservice" class="anchor-navigation-ex-anchor" href="#rediscacheservice"><i class="fa fa-link" aria-hidden="true"></i></a>RedisCacheService</h3>
-<p>&#x6211;&#x4EEC;&#x540C;&#x6837;&#x63D0;&#x4F9B;&#x4E86;RedisCacheService&#x4F5C;&#x4E3A;&#x5916;&#x90E8;&#x7F13;&#x5B58;&#x5B58;&#x50A8;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x8FDB;&#x884C;&#x5207;&#x6362;(local=false)&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x540C;&#x6837;&#x63D0;&#x4F9B;&#x4E86;RedisCacheService&#x4F5C;&#x4E3A;&#x5916;&#x90E8;&#x7F13;&#x5B58;&#x5B58;&#x50A8;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x8FDB;&#x884C;&#x5207;&#x6362;(faster.cache.redis.enabled=true)&#x3002;</p>
 <p>&#x60A8;&#x53EF;&#x4EE5;&#x5BF9;redis&#x8FDB;&#x884C;&#x989D;&#x5916;&#x914D;&#x7F6E;&#xFF0C;&#x901A;&#x8FC7;spring&#x6240;&#x63D0;&#x4F9B;&#x7684;redis&#x914D;&#x7F6E;&#x3002;</p>
 <h2 id="&#x81EA;&#x5B9A;&#x4E49;&#x7F13;&#x5B58;"><a name="&#x81EA;&#x5B9A;&#x4E49;&#x7F13;&#x5B58;" class="anchor-navigation-ex-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;&#x7F13;&#x5B58;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x81EA;&#x5B9A;&#x4E49;&#x7F13;&#x5B58;</h2>
 <p>&#x5982;&#x679C;&#x60A8;&#x4E0D;&#x4E60;&#x60EF;&#x4F7F;&#x7528;redis&#x4F5C;&#x4E3A;&#x7F13;&#x5B58;&#xFF0C;&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x96C6;&#x6210;&#x5176;&#x4ED6;&#x7F13;&#x5B58;&#x3002;</p>
@@ -947,13 +1001,25 @@ public class CacheProperties {
      */
     Collection&lt;V&gt; values(String cachePrefix);
 }
-</code></pre><p>&#x6211;&#x4EEC;&#x4F9D;&#x7136;&#x5EFA;&#x8BAE;&#x60A8;&#x5728;&#x672C;&#x5730;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x65F6;&#x4F7F;&#x7528;&#x672C;&#x5730;&#x7F13;&#x5B58;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x8BA4;&#x4E3A;&#x8FD9;&#x662F;&#x591A;&#x4F59;&#x7684;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x53BB;&#x9664;@ConditionalOnProperty&#x6CE8;&#x89E3;&#x3002;</p>
-<p>&#x6CE8;&#x518C;&#x7F13;&#x5B58;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code>    @Bean(&quot;cacheService&quot;)
-    @ConditionalOnProperty(prefix = &quot;faster.cache&quot;, name = &quot;local&quot;, havingValue = &quot;false&quot;)
+</code></pre><p>&#x6CE8;&#x518C;&#x81EA;&#x5B9A;&#x4E49;&#x7F13;&#x5B58;&#xFF1A;</p>
+<pre><code>    /**
+     *
+     * @return &#x81EA;&#x5B9A;&#x4E49;&#x7F13;&#x5B58;
+     */
+    @ConditionalOnMissingBean(ICacheService.class)
+    @ConditionalOnProperty(prefix = &quot;faster.cache.custom&quot;, name = &quot;enabled&quot;, havingValue = &quot;true&quot;)
+    @Bean
     public ICacheService customCacheService() {
-        return new CustomCacheService();
-}
+        CustomCacheService cacheService = new CustomCacheService();
+        initCache(cacheService, false);
+        return cacheService;
+    }
+</code></pre><p>&#x542F;&#x7528;&#x914D;&#x7F6E;&#xFF1A;
+application.yml</p>
+<pre><code>faster:
+    cache:
+        custom:
+            enabled: true
 </code></pre>
                                 
                                 </section>
@@ -997,7 +1063,7 @@ public class CacheProperties {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"\b缓存","level":"1.5.3","depth":2,"next":{"title":"Web组件","level":"1.5.4","depth":2,"path":"core/web.md","ref":"core/web.md","articles":[]},"previous":{"title":"基础实体","level":"1.5.2","depth":2,"path":"core/entity.md","ref":"core/entity.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex","donate","copy-code-button"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://faster-framework.github.io/faster-framework-guide/static/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://faster-framework.github.io/faster-framework-guide/static/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"core/cache.md","mtime":"2018-08-02T10:03:06.498Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-27T07:25:55.209Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"\b缓存","level":"1.5.3","depth":2,"next":{"title":"Web组件","level":"1.5.4","depth":2,"path":"core/web.md","ref":"core/web.md","articles":[]},"previous":{"title":"基础实体","level":"1.5.2","depth":2,"path":"core/entity.md","ref":"core/entity.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex","donate","copy-code-button"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://faster-framework.github.io/faster-framework-guide/static/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://faster-framework.github.io/faster-framework-guide/static/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"core/cache.md","mtime":"2018-09-04T08:58:14.275Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-04T09:44:07.954Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

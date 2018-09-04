@@ -718,7 +718,52 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="../builder/">
+        <li class="chapter " data-level="1.8" data-path="../sms/">
+            
+                <a href="../sms/">
+            
+                    
+                    SMS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../sms/started.html">
+            
+                <a href="../sms/started.html">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../sms/captcha.html">
+            
+                <a href="../sms/captcha.html">
+            
+                    
+                    短信验证码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../builder/">
             
                 <a href="../builder/">
             
@@ -732,7 +777,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="../builder/started.html">
+        <li class="chapter " data-level="1.9.1" data-path="../builder/started.html">
             
                 <a href="../builder/started.html">
             
@@ -826,6 +871,11 @@ public class AuthProperties {
 <h2 id="webcontextfacade"><a name="webcontextfacade" class="anchor-navigation-ex-anchor" href="#webcontextfacade"><i class="fa fa-link" aria-hidden="true"></i></a>WebContextFacade</h2>
 <p>&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;WebContextFacade&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x767B;&#x5F55;&#x4FE1;&#x606F;&#x3002;</p>
 <pre><code>WebContextFacade.getRequestContext.getUserId();
+</code></pre><p>&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;autowired&#x5F62;&#x5F0F;&#x6CE8;&#x5165;RequestContext&#x3002;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x4FDD;&#x8BC1;&#x4E86;&#x5176;&#x53D8;&#x91CF;&#x4E3A;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x3002;</p>
+<pre><code>@Autowired
+private RequestContext requestContext;
+
+requestContext.getUserId();
 </code></pre><p></p>
 <h2 id="jwtservice"><a name="jwtservice" class="anchor-navigation-ex-anchor" href="#jwtservice"><i class="fa fa-link" aria-hidden="true"></i></a>JwtService</h2>
 <p>JwtService&#x4E3A;&#x60A8;&#x63D0;&#x4F9B;&#x4E86;&#x521B;&#x5EFA;token&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x5E94;&#x7528;&#x7684;&#x767B;&#x5F55;&#x63A5;&#x53E3;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;token&#x5E76;&#x8FD4;&#x56DE;&#x7ED9;&#x524D;&#x7AEF;&#x3002;</p>
@@ -872,7 +922,7 @@ public class AuthProperties {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"权限","level":"1.5.7","depth":2,"next":{"title":"上传组件","level":"1.5.8","depth":2,"path":"core/upload.md","ref":"core/upload.md","articles":[]},"previous":{"title":"错误码","level":"1.5.6","depth":2,"path":"core/error-code.md","ref":"core/error-code.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex","donate","copy-code-button"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://faster-framework.github.io/faster-framework-guide/static/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://faster-framework.github.io/faster-framework-guide/static/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"core/auth.md","mtime":"2018-08-02T10:03:06.497Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-27T07:25:55.209Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"权限","level":"1.5.7","depth":2,"next":{"title":"上传组件","level":"1.5.8","depth":2,"path":"core/upload.md","ref":"core/upload.md","articles":[]},"previous":{"title":"错误码","level":"1.5.6","depth":2,"path":"core/error-code.md","ref":"core/error-code.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex","donate","copy-code-button"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://faster-framework.github.io/faster-framework-guide/static/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://faster-framework.github.io/faster-framework-guide/static/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"core/auth.md","mtime":"2018-09-04T09:01:08.462Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-04T09:44:07.954Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
