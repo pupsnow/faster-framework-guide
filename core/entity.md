@@ -1,6 +1,6 @@
 # 基础实体
 
-您可以在com.github.faster.framework.core.entity包下看到基本的Entity。
+您可以在cn.org.framework.core.entity包下看到基本的Entity。
 
 ## BaseEntity
 Faster提供了基本的Entity用于操作数据库。

@@ -6,8 +6,8 @@
 
 
 ```
-compile "com.github.faster-framework:faster-framework-core-spring-boot-starter:${lastVersion}"
-compile "com.github.faster-framework:faster-framework-admin-spring-boot-starter:${lastVersion}"
+compile "cn.org.faster:faster-framework-core-spring-boot-starter:${lastVersion}"
+compile "cn.org.faster:faster-framework-admin-spring-boot-starter:${lastVersion}"
 ```
 
 ## 完整gradle配置
@@ -30,8 +30,8 @@ repositories {
 sourceSets.main.resources.srcDirs = ["src/main/java", "src/main/resources"]
 
 dependencies {
-   compile "com.github.faster-framework:faster-framework-core-spring-boot-starter:${lastVersion}"
-   compile "com.github.faster-framework:faster-framework-admin-spring-boot-starter:${lastVersion}"
+   compile "cn.org.faster:faster-framework-core-spring-boot-starter:${lastVersion}"
+   compile "cn.org.faster:faster-framework-admin-spring-boot-starter:${lastVersion}"
 }
 
 ```

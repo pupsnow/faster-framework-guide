@@ -43,7 +43,7 @@ build.gradle中加入以下代码：
 
 ```
 dependencies {
-    compile "com.github.faster-framework:faster-framework-core-spring-boot-starter:{最新版本}"
+    compile "cn.org.faster:faster-framework-core-spring-boot-starter:{最新版本}"
 }
 ```
 
@@ -67,7 +67,7 @@ repositories {
 sourceSets.main.resources.srcDirs = ["src/main/java", "src/main/resources"]
 
 dependencies {
-    compile "com.github.faster-framework:faster-framework-core-spring-boot-starter:{最新版本}"
+    compile "cn.org.faster:faster-framework-core-spring-boot-starter:{最新版本}"
 }
 
 ```

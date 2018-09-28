@@ -55,7 +55,7 @@ cn.faster.test.modules.v2.user.controller.UserController;
 ```
 package cn.faster.test.modules.v2.user;
 
-import com.github.faster.framework.core.web.version.ApiVersion;
+import cn.org.framework.core.web.version.ApiVersion;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

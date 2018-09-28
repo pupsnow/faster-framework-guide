@@ -3,7 +3,7 @@
 ## 引入
 
 ```
-compile "com.github.faster-framework:faster-framework-sms-spring-boot-starter:${lastVersion}"
+compile "cn.org.faster:faster-framework-sms-spring-boot-starter:${lastVersion}"
 ```
 
 ## 配置

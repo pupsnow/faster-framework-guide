@@ -2,7 +2,7 @@
 
 数据库操作我们选用Mybatis框架。
 
-您可以在com.github.faster.framework.core.mybatis包下看到我们对mybatis所做的扩展与封装。
+您可以在cn.org.faster.framework.core.mybatis包下看到我们对mybatis所做的扩展与封装。
 
 
 

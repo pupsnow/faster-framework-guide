@@ -169,7 +169,7 @@ SecurityManager管理着所有Subject、且负责进行认证和授权、及会�
 
 由于每次授权所需要查询的数据过多，故我们基于core包下的CacheFacede实现了自己的缓存管理器。
 
-您可以查看com.github.faster.framework.admin.shiro.cache包下代码。
+您可以查看cn.org.faster.framework.admin.shiro.cache包下代码。
 
 ## 自定义权限过滤器
 
@@ -189,11 +189,11 @@ securityManager.setSubjectDAO(subjectDAO);
 自定义过滤器代码如下：
 
 ```
-package com.github.faster.framework.admin.shiro;
+package cn.org.faster.framework.admin.shiro;
 
 import com.alibaba.fastjson.JSON;
-import com.github.faster.framework.core.exception.model.BasisErrorCode;
-import com.github.faster.framework.core.exception.model.ResultError;
+import cn.org.faster.framework.core.exception.model.BasisErrorCode;
+import cn.org.faster.framework.core.exception.model.ResultError;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.web.filter.authc.AuthenticatingFilter;

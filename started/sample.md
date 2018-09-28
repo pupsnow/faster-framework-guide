@@ -28,7 +28,7 @@ processResources {
 }
 
 dependencies {
-    compile "com.github.faster-framework:faster-framework-core-spring-boot-starter:1.0.0.RELEASE"
+    compile "cn.org.faster:faster-framework-core-spring-boot-starter:1.0.0.RELEASE"
 }
 
 ```
@@ -100,7 +100,7 @@ cn.faster.test.modules.user.entity.UserEntity.java
 ```
 package cn.faster.test.modules.user.entity;
 
-import com.github.faster.framework.core.entity.BaseEntity;
+import cn.org.faster.framework.core.entity.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -123,7 +123,7 @@ cn.faster.test.modules.user.mapper.UserMapper.java
 package cn.faster.test.modules.user.mapper;
 
 import cn.faster.test.modules.user.entity.UserEntity;
-import com.github.faster.framework.core.mybatis.mapper.BaseMapper;
+import cn.org.faster.framework.core.mybatis.mapper.BaseMapper;
 
 /**
  * @author zhangbowen
