@@ -865,7 +865,7 @@ processResources {
 }
 
 dependencies {
-    compile &quot;com.github.faster-framework:faster-framework-core-spring-boot-starter:1.0.0.RELEASE&quot;
+    compile &quot;cn.org.faster:faster-framework-core-spring-boot-starter:1.0.0.RELEASE&quot;
 }
 </code></pre><h2 id="&#x65B0;&#x5EFA;&#x542F;&#x52A8;&#x7C7B;"><a name="&#x65B0;&#x5EFA;&#x542F;&#x52A8;&#x7C7B;" class="anchor-navigation-ex-anchor" href="#&#x65B0;&#x5EFA;&#x542F;&#x52A8;&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65B0;&#x5EFA;&#x542F;&#x52A8;&#x7C7B;</h2>
 <p>&#x9996;&#x5148;&#x5728;java&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;cn.faster.test&#x5305;&#xFF0C;&#x5728;&#x5176;&#x4E0B;&#x521B;&#x5EFA;TestApplication.java&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
@@ -911,7 +911,7 @@ cn.faster.test.modules.user.entity
 <p>cn.faster.test.modules.user.entity.UserEntity.java</p>
 <pre><code>package cn.faster.test.modules.user.entity;
 
-import com.github.faster.framework.core.entity.BaseEntity;
+import cn.org.faster.framework.core.entity.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -928,7 +928,7 @@ public class UserEntity extends BaseEntity {
 <pre><code>package cn.faster.test.modules.user.mapper;
 
 import cn.faster.test.modules.user.entity.UserEntity;
-import com.github.faster.framework.core.mybatis.mapper.BaseMapper;
+import cn.org.faster.framework.core.mybatis.mapper.BaseMapper;
 
 /**
  * @author zhangbowen
@@ -1036,7 +1036,7 @@ public class UserController {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"简单示例","level":"1.3.4","depth":2,"next":{"title":"版本控制","level":"1.3.5","depth":2,"path":"started/version.md","ref":"started/version.md","articles":[]},"previous":{"title":"配置文件","level":"1.3.3","depth":2,"path":"started/config.md","ref":"started/config.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex","donate","copy-code-button"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://faster-framework.github.io/faster-framework-guide/static/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://faster-framework.github.io/faster-framework-guide/static/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"started/sample.md","mtime":"2018-09-04T09:45:04.097Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-20T07:10:28.883Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"简单示例","level":"1.3.4","depth":2,"next":{"title":"版本控制","level":"1.3.5","depth":2,"path":"started/version.md","ref":"started/version.md","articles":[]},"previous":{"title":"配置文件","level":"1.3.3","depth":2,"path":"started/config.md","ref":"started/config.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["anchor-navigation-ex","donate","copy-code-button"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://faster-framework.github.io/faster-framework-guide/static/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://faster-framework.github.io/faster-framework-guide/static/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"started/sample.md","mtime":"2018-09-28T06:43:51.882Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-28T06:53:54.564Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
