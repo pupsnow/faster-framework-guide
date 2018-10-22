@@ -1,9 +1,8 @@
 # 基础实体
 
-您可以在cn.org.framework.core.entity包下看到基本的Entity。
 
 ## BaseEntity
-Faster提供了基本的Entity用于操作数据库。
+Faster提供了基本的BaseEntity用于操作数据库。
 
 所有的数据库实体都应当继承BaseEntity，拥有公用字段，当然也可以按照您自己的习惯自行封装BaseEntity。
 
@@ -62,12 +61,8 @@ public class SysPermission extends BaseEntity implements TreeNode {
 
 
 ```
-List<SysPermission> list = sysPermissionMapper.selectByExample(
-                Example.builder(SysPermission.class)
-                        .where(WeekendSqls.<SysPermission>custom().andEqualTo(SysPermission::getDeleted, 0))
-                        .orderByAsc(
-                                "parentIds"
-                        ).build()
+  List<SysPermission> list = super.baseMapper.selectList(
+                new LambdaQueryWrapper<SysPermission>().orderByAsc(SysPermission::getParentIds)
         ).stream().sorted(Comparator.comparing(BaseEntity::getSort)).collect(Collectors.toList());
 ```
 
@@ -82,16 +77,12 @@ TreeUtils.convertToTree(list);
 完整代码如下：
 
 ```
- /**
+    /**
      * @return 权限树
      */
     public List<TreeNode> treeList() {
-        List<SysPermission> list = sysPermissionMapper.selectByExample(
-                Example.builder(SysPermission.class)
-                        .where(WeekendSqls.<SysPermission>custom().andEqualTo(SysPermission::getDeleted, 0))
-                        .orderByAsc(
-                                "parentIds"
-                        ).build()
+        List<SysPermission> list = super.baseMapper.selectList(
+                new LambdaQueryWrapper<SysPermission>().orderByAsc(SysPermission::getParentIds)
         ).stream().sorted(Comparator.comparing(BaseEntity::getSort)).collect(Collectors.toList());
         return TreeUtils.convertToTree(list);
     }

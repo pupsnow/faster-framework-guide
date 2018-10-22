@@ -23,10 +23,6 @@ cn.faster.test.modules.v1.user.controller.UserController;
 ```
 package cn.faster.test.modules.v1.user;
 
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author zhangbowen
@@ -53,13 +49,6 @@ public class UserController {
 cn.faster.test.modules.v2.user.controller.UserController;
 
 ```
-package cn.faster.test.modules.v2.user;
-
-import cn.org.framework.core.web.version.ApiVersion;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author zhangbowen

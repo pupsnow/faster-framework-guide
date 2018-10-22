@@ -2,7 +2,10 @@
     "plugins": [
         "anchor-navigation-ex",
         "donate",
-        "copy-code-button"
+        "copy-code-button",
+        "expandable-chapters",
+        "search",
+        "tbfed-pagefooter"
     ],
     "pluginsConfig": {
         "donate": {
@@ -14,6 +17,11 @@
         },
         "anchor-navigation-ex":{
             "showLevel": false
-        }
+        },
+        "tbfed-pagefooter": {
+            "copyright":"faster-framework",
+            "modify_label": "该文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+          }
     }
 }

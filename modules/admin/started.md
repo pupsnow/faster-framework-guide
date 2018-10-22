@@ -6,8 +6,10 @@
 
 
 ```
-compile "cn.org.faster:faster-framework-core-spring-boot-starter:${lastVersion}"
-compile "cn.org.faster:faster-framework-admin-spring-boot-starter:${lastVersion}"
+dependencies {
+   compile "cn.org.faster:faster-framework-spring-boot-starter-core"
+   compile "cn.org.faster:faster-framework-spring-boot-starter-admin"
+}
 ```
 
 ## 完整gradle配置
@@ -15,7 +17,7 @@ compile "cn.org.faster:faster-framework-admin-spring-boot-starter:${lastVersion}
 ```
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '2.0.2.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.5.RELEASE'
 }
 
 group 'test-framework'
@@ -28,10 +30,14 @@ repositories {
     mavenCentral()
 }
 sourceSets.main.resources.srcDirs = ["src/main/java", "src/main/resources"]
-
+dependencyManagement {
+    imports {
+        mavenBom "cn.org.faster:faster-framework-parent:${lastedVersion}"
+    }
+}
 dependencies {
-   compile "cn.org.faster:faster-framework-core-spring-boot-starter:${lastVersion}"
-   compile "cn.org.faster:faster-framework-admin-spring-boot-starter:${lastVersion}"
+   compile "cn.org.faster:faster-framework-spring-boot-starter-core"
+   compile "cn.org.faster:faster-framework-spring-boot-starter-admin"
 }
 
 ```

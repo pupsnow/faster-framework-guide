@@ -3,7 +3,10 @@
 ## 引入
 
 ```
-compile "cn.org.faster:faster-framework-sms-spring-boot-starter:${lastVersion}"
+dependencies {
+    compile "cn.org.faster:faster-framework-spring-boot-starter-core"
+    compile "cn.org.faster:faster-framework-spring-boot-starter-sms"
+}
 ```
 
 ## 配置
@@ -14,21 +17,22 @@ compile "cn.org.faster:faster-framework-sms-spring-boot-starter:${lastVersion}"
 faster:
   sms:
     ali:
-      enabled: true
-      access-key-id: 111
-      access-key-secret: 222
+        access-key-id: 111
+        access-key-secret: 222
+    captcha:
+        expire: 60 //超时时间（s），默认15分钟
 ```
 
 
 ## 使用
 
-当您需要使用短信功能时，只需注入所引入的服务即可：
+当您需要使用短信功能时，只需注入所引入的服务即可，其中泛型为相应服务所需参数，继承ISmsService时指定。
 
 ```
     @Autowired
-    private AliSmsService aliSmsService;
+    private ISmsService<?> smsService;
 
-    aliSmsService.send(SendSmsRequest)
+    smsService.send(?);
 ```
 
 我们仅对sdk进行了整合，使用方式还需自行查看三方使用说明文档。
@@ -89,6 +93,10 @@ public class SmsProperties {
      */
     private boolean debug;
     /**
+     * 模式
+     */
+    private String mode;
+    /**
      * 阿里短信
      */
     private AliProperties ali = new AliProperties();
@@ -100,10 +108,6 @@ public class SmsProperties {
     @Data
     @ConfigurationProperties(prefix = "ali")
     public static class AliProperties {
-        /**
-         * 是否开启
-         */
-        private boolean enabled;
         /**
          * 阿里key
          */
@@ -119,12 +123,15 @@ public class SmsProperties {
 3. 注册阿里短信模块
 
 ```
-   /**
+    /**
      * 阿里云短信发送配置
+     * @param smsProperties 短信配置
+     * @return AliSmsService
      */
     @Bean
-    @ConditionalOnProperty(prefix = "faster.sms.ali", name = "enabled", havingValue = "true")
-    public AliSmsService aliSmsCode(SmsProperties smsProperties) {
+    @ConditionalOnProperty(prefix = "faster.sms", name = "mode", havingValue = "ali")
+    @ConditionalOnMissingBean(ISmsService.class)
+    public ISmsService aliSmsCode(SmsProperties smsProperties) {
         return new AliSmsService(smsProperties.getAli().getAccessKeyId(), smsProperties.getAli().getAccessKeySecret());
     }
 ```

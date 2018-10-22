@@ -110,40 +110,16 @@ public class UploadController extends AbstractUploadController{}
 
 ### application.yml
 
-您需要在配置文件中修改上传模式为您自定义的名称。
+您需要在配置文件中修改上传模式。
 
 ```
-@Data
-@ConfigurationProperties(prefix = "faster.upload")
-public class UploadProperties {
-    /**
-     * 是否开启
-     */
-    private boolean enabled = true;
-    /**
-     * 本地模式
-     */
-    private LocalUploadProperties local = new LocalUploadProperties();
-
-
-    @ConfigurationProperties(prefix = "faster.upload.local")
-    @Data
-    public static class LocalUploadProperties {
-        /**
-         * 是否开启
-         */
-        private boolean enabled;
-        /**
-         * 文件的存储目录
-         */
-        private String fileDir;
-        /**
-         * 请求图片时的网址前缀
-         */
-        private String urlPrefix;
-    }
-}
-
+faster:
+  upload:
+    enabled: true
+    mode: local
+    local:
+        fileDir: /data/upload
+        urlPrefix: http://xxx.com/
 ```
 
 ### 注册
@@ -152,14 +128,13 @@ public class UploadProperties {
 
 ```
     @Configuration
-    @ConditionalOnProperty(prefix = "faster.upload.{youUploadName}", name = "enabled", havingValue = "true")
-    @EnableConfigurationProperties({ProjectProperties.class, UploadProperties.YourUploadProperties.class})
+    @ConditionalOnProperty(prefix = "faster.upload", name = "mode", havingValue = "{youUploadMode}")
     @ConditionalOnMissingBean(IUploadService.class)
     public static class YourUploadConfiguration {
 
         @Bean
-        public IUploadService localUpload(ProjectProperties projectProperties, UploadProperties.YourUploadProperties localUploadProperties) {
-            return new YourUploadService();
+        public IUploadService uploadService() {
+           return new YourUploadService();
         }
     }
 ```

@@ -18,7 +18,7 @@
 @Service
 public class AliSmsCaptchaService extends ISmsCaptchaService {
     @Autowired
-    private AliSmsService aliSmsService;
+    private ISmsService<SendSmsRequest> smsService;
 
     public AliSmsCaptchaService(SmsProperties smsProperties) {
         super(smsProperties.isDebug(), smsProperties.getCaptcha().getExpire());
@@ -28,7 +28,7 @@ public class AliSmsCaptchaService extends ISmsCaptchaService {
     protected boolean sendCode(String phone, String code) {
         SendSmsRequest sendSmsRequest = new SendSmsRequest();
         sendSmsRequest.setPhoneNumbers(phone);
-        return aliSmsService.send(sendSmsRequest);
+        return smsService.send(sendSmsRequest);
     }
 
 }

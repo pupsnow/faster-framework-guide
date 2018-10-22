@@ -21,7 +21,7 @@ build.gradle文件中加入以下代码：
 ```
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '2.0.2.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.5.RELEASE'
 }
 
 group '{your group}'
@@ -35,15 +35,20 @@ repositories {
 }
 sourceSets.main.resources.srcDirs = ["src/main/java", "src/main/resources"]
 
+dependencyManagement {
+    imports {
+        mavenBom "cn.org.faster:faster-framework-parent:{最新版本}"
+    }
+}
 ```
 
-### 引入仓库
+### 引入核心包
 
 build.gradle中加入以下代码：
 
 ```
 dependencies {
-    compile "cn.org.faster:faster-framework-core-spring-boot-starter:{最新版本}"
+    compile "cn.org.faster:faster-framework-spring-boot-starter-core"
 }
 ```
 
@@ -52,11 +57,11 @@ dependencies {
 ```
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '2.0.2.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.5.RELEASE'
 }
 
-group 'test-framework'
-version '1.0-SNAPSHOT'
+group '{your group}'
+version '{your version}'
 
 sourceCompatibility = 1.8
 
@@ -66,8 +71,13 @@ repositories {
 }
 sourceSets.main.resources.srcDirs = ["src/main/java", "src/main/resources"]
 
+dependencyManagement {
+    imports {
+        mavenBom "cn.org.faster:faster-framework-parent:{最新版本}"
+    }
+}
 dependencies {
-    compile "cn.org.faster:faster-framework-core-spring-boot-starter:{最新版本}"
+    compile "cn.org.faster:faster-framework-spring-boot-starter-core"
 }
 
 ```
