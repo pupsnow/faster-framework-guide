@@ -48,8 +48,12 @@
     * [SMS](modules/sms/README.md)
         * [快速开始](modules/sms/started.md)
         * [短信验证码](modules/sms/captcha.md)
+    * [Redis](modules/redis/README.md)
+        * [快速开始](modules/redis/started.md)
+        * [发布/监听](modules/redis/pub-sub.md)
 * [代码生成器](builder/README.md)
     * [快速开始](builder/started.md)
 * [附录](appendix/README.md)
+    * [所提供模块列表](appendix/modules-list.md)
     * [可引入配置列表](appendix/include-config-list.md)
 
