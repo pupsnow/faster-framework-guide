@@ -32,7 +32,7 @@ repositories {
 sourceSets.main.resources.srcDirs = ["src/main/java", "src/main/resources"]
 dependencyManagement {
     imports {
-        mavenBom "cn.org.faster:faster-framework-parent:${lastedVersion}"
+        mavenBom "cn.org.faster:faster-framework-spring-boot-starter-parent:${lastedVersion}"
     }
 }
 dependencies {

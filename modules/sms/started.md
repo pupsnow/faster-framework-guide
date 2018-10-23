@@ -8,6 +8,35 @@ dependencies {
     compile "cn.org.faster:faster-framework-spring-boot-starter-sms"
 }
 ```
+## 完整gradle配置
+
+```
+plugins {
+    id 'java'
+    id 'io.spring.dependency-management' version '1.0.5.RELEASE'
+}
+
+group 'test-framework'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    mavenCentral()
+}
+sourceSets.main.resources.srcDirs = ["src/main/java", "src/main/resources"]
+dependencyManagement {
+    imports {
+        mavenBom "cn.org.faster:faster-framework-spring-boot-starter-parent:${lastedVersion}"
+    }
+}
+dependencies {
+   compile "cn.org.faster:faster-framework-spring-boot-starter-core"
+   compile "cn.org.faster:faster-framework-spring-boot-starter-sms"
+}
+
+```
 
 ## 配置
 

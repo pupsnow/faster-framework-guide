@@ -73,7 +73,7 @@ sourceSets.main.resources.srcDirs = ["src/main/java", "src/main/resources"]
 
 dependencyManagement {
     imports {
-        mavenBom "cn.org.faster:faster-framework-parent:{最新版本}"
+        mavenBom "cn.org.faster:faster-framework-spring-boot-starter-parent:{最新版本}"
     }
 }
 dependencies {
