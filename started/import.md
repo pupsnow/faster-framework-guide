@@ -21,7 +21,6 @@ build.gradle文件中加入以下代码：
 ```
 plugins {
     id 'java'
-    id 'io.spring.dependency-management' version '1.0.5.RELEASE'
 }
 
 group '{your group}'
@@ -35,11 +34,15 @@ repositories {
 }
 sourceSets.main.resources.srcDirs = ["src/main/java", "src/main/resources"]
 
-dependencyManagement {
-    imports {
-        mavenBom "cn.org.faster:faster-framework-parent:{最新版本}"
-    }
+dependencies {
+   implementation "cn.org.faster:faster-framework-spring-boot-starter-parent:${lastedVersion}"
 }
+```
+
+5.0以下gradle版本需配置settings.gradle
+
+```
+enableFeaturePreview("IMPROVED_POM_SUPPORT")
 ```
 
 ### 引入核心包
