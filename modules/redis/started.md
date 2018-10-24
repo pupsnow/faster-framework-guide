@@ -13,6 +13,7 @@ dependencies {
 ```
 plugins {
     id 'java'
+    id 'io.spring.dependency-management' version '1.0.5.RELEASE'
 }
 
 group 'test-framework'
@@ -25,18 +26,16 @@ repositories {
     mavenCentral()
 }
 sourceSets.main.resources.srcDirs = ["src/main/java", "src/main/resources"]
-
+dependencyManagement {
+    imports {
+        mavenBom "cn.org.faster:faster-framework-spring-boot-starter-parent:${lastedVersion}"
+    }
+}
 dependencies {
-   implementation "cn.org.faster:faster-framework-spring-boot-starter-parent:${lastedVersion}"
    compile "cn.org.faster:faster-framework-spring-boot-starter-core"
    compile "cn.org.faster:faster-framework-spring-boot-starter-redis"
 }
 
-```
-5.0以下gradle版本需配置settings.gradle
-
-```
-enableFeaturePreview("IMPROVED_POM_SUPPORT")
 ```
 
 ## application.yml配置
