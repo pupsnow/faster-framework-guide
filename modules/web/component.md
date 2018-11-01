@@ -10,27 +10,6 @@ Web组件为您提供了舒适的接口开发体验。
 
 Faster扩展了ResponseEntity，为您提供了ErrorResponseEntity。您可以配合ErrorCode返回直观的错误信息。
 
-## 默认配置文件
-
-默认的，我们为您对SpringMvc作了如下配置：
-
-```
-spring:
-  # 返回json的配置
-  jackson:
-    # 空字段不输出
-    default-property-inclusion: non_null
-    # 时间为东八区
-    time-zone: GMT+8
-    # 日期格式默认
-    date-format: yyyy-MM-dd HH:mm:ss
-    # 数字输出字符串
-    generator:
-      WRITE_NUMBERS_AS_STRINGS: true
-  mvc:
-    # MVC表单提交日期格式
-    date-format: yyyy-MM-dd HH:mm:ss
-```
 
 ## Java8日期支持
 

@@ -1,6 +1,6 @@
 # 后台管理接口
 
-我们基于Faster-Framework-Core研发了一套基础的后台管理接口框架：[Faster-Framework-Admin](https://github.com/faster-framework/faster-framework-admin)。
+我们基于Faster-Framework-Core研发了一套基础的后台管理接口模块：Faster-Framework-Admin。
 
 在使用Admin时，您只需要引入我们提供的包，便可以无需关心后台管理复杂的框架逻辑，专注业务开发。
 

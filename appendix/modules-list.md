@@ -1,35 +1,38 @@
 # 模块列表
-用户可通过使用配置spring 插件：io.spring.dependency-management，引入parent。
+用户可通过使用parent标签管理引入faster依赖管理。
 
 ```
-plugins {
-    id 'io.spring.dependency-management' version '1.0.5.RELEASE'
-}
-dependencyManagement {
-    imports {
-        mavenBom "cn.org.faster:faster-framework-spring-boot-starter-parent:${parentVersion}"
-    }
-}
+<parent>
+    <groupId>cn.org.faster</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>${最新版本}</version>
+</parent>
 ```
 
-用户可通过使用gradle dependencies compile引入子模块。
+此后用户便可直接引入依赖而无需关心版本.
 
 ```
-dependencies {
-    compile "cn.org.faster:faster-framework-spring-boot-starter-core"
-    compile "cn.org.faster:faster-framework-spring-boot-starter-admin"
-    compile "cn.org.faster:faster-framework-spring-boot-starter-redis"
-    compile "cn.org.faster:faster-framework-spring-boot-starter-sms"
-    ....
-    ....
-}
+ <dependencies>
+        <dependency>
+            <groupId>cn.org.faster</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.org.faster</groupId>
+            <artifactId>spring-boot-starter-mybatis</artifactId>
+        </dependency>
+</dependencies>
+    ...
+    ...
+    ...
 ```
 
 模块名称|描述
 ---|---
-faster-framework-spring-boot-starter-parent| 父级引用管理，引入后版本信息交由其管理
-faster-framework-spring-boot-starter-core|核心包，所有项目必须引入
-faster-framework-spring-boot-starter-admin|后台管理接口脚手架
-faster-framework-spring-boot-starter-redis|redis支持
-faster-framework-spring-boot-starter-sms|短信模块
+spring-boot-starter-parent| 父级引用管理，引入后版本信息交由其管理
+spring-boot-starter-web|web常用配置及组件
+spring-boot-starter-mybatis|mybatis基础配置
+spring-boot-starter-admin|后台管理接口脚手架
+spring-boot-starter-redis|redis支持
+spring-boot-starter-sms|短信模块
 

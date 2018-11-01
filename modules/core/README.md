@@ -1,10 +1,3 @@
 # 核心功能
 
-本章将为您介绍faster核心包，[Faster-Framework-Core](https://github.com/faster-framework/faster-framework-core)。faster核心包中的组件都是开箱即用的。您可以通过或者查看源码来修改或扩展。
-
-同样，如果您发现需要改进的地方，欢迎您联系我们。
-
-Faster基于Spring Boot开发，所有组件的集成开发均遵循Spring Boot Starter规范，即分为core、autoconfigure、starter。
-其中core为核心代码，autoconfigure为对外提供的配置文件，starter为引入autoconfigure及默认配置。
-
-> 下面我们将对所有组件进行一一介绍。
+本章将为您介绍Faster-Framework-Core，其为faster公用工具包，供其他组件所引入。。

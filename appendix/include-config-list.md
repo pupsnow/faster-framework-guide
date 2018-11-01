@@ -1,6 +1,8 @@
 # 可引入配置列表
 用户可通过使用spring.profiles.include引入以下配置。
 
+示例：
+
 ```
 spring:
   profiles:

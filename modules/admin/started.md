@@ -6,41 +6,20 @@
 
 
 ```
-dependencies {
-   compile "cn.org.faster:faster-framework-spring-boot-starter-core"
-   compile "cn.org.faster:faster-framework-spring-boot-starter-admin"
-}
+<dependency>
+    <groupId>cn.org.faster</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+<dependency>
+    <groupId>cn.org.faster</groupId>
+    <artifactId>spring-boot-starter-mybatis</artifactId>
+</dependency>
+<dependency>
+    <groupId>cn.org.faster</groupId>
+    <artifactId>spring-boot-starter-admin</artifactId>
+</dependency>
 ```
 
-## 完整gradle配置
-
-```
-plugins {
-    id 'java'
-    id 'io.spring.dependency-management' version '1.0.5.RELEASE'
-}
-
-group 'test-framework'
-version '1.0-SNAPSHOT'
-
-sourceCompatibility = 1.8
-
-repositories {
-    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-    mavenCentral()
-}
-sourceSets.main.resources.srcDirs = ["src/main/java", "src/main/resources"]
-dependencyManagement {
-    imports {
-        mavenBom "cn.org.faster:faster-framework-spring-boot-starter-parent:${lastedVersion}"
-    }
-}
-dependencies {
-   compile "cn.org.faster:faster-framework-spring-boot-starter-core"
-   compile "cn.org.faster:faster-framework-spring-boot-starter-admin"
-}
-
-```
 
 ## 配置
 
@@ -84,5 +63,5 @@ http://127.0.0.1:8080/sys/users
 
 ## 数据库
 
-您可以通过查看[github源码](https://github.com/faster-framework/faster-framework-admin/tree/master/db)中的sql文件，来创建Admin所需的数据表。
+您可以通过查看[github源码](https://github.com/faster-framework/faster-framework-project/tree/master/faster-framework/faster-admin/db)中的sql文件，来创建Admin所需的数据表。
 
